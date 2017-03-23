@@ -1,0 +1,19 @@
+{
+  "name": "document-management-system",
+  "version": "1.0.0",
+  "description": "This is a system (API) that manages documents with users and user roles. Each document defines access rights; the document defines which roles can access it. Also, each document specifies the date it was published. It is built with NodeJS, Express and Postgres as it's database. Source code employs ES6 syntax traspiled down to ES5 using Babel.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/andela-cofor/Document-Management-System.git"
+  },
+  "author": "Ofor Chinedu",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/andela-cofor/Document-Management-System/issues"
+  },
+  "homepage": "https://github.com/andela-cofor/Document-Management-System#readme"
+}
