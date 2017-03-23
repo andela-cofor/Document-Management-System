@@ -15,5 +15,9 @@
   "bugs": {
     "url": "https://github.com/andela-cofor/Document-Management-System/issues"
   },
-  "homepage": "https://github.com/andela-cofor/Document-Management-System#readme"
+  "homepage": "https://github.com/andela-cofor/Document-Management-System#readme",
+  "dependencies": {
+    "body-parser": "^1.17.1",
+    "express": "^4.15.2"
+  }
 }
