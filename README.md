@@ -1,4 +1,4 @@
-[![Build Status](https://travis-ci.org/andela-cofor/Document-Management-System.svg?branch=master)](https://travis-ci.org/andela-cofor/Document-Management-System)
+[![Build Status](https://travis-ci.org/andela-cofor/Document-Management-System.svg?branch=Integrate-TravisCI-with-readme-badge)](https://travis-ci.org/andela-cofor/Document-Management-System)
 
 # Document-Management-System
 
