@@ -1,4 +1,5 @@
 [![Build Status](https://travis-ci.org/andela-cofor/Document-Management-System.svg?branch=Development)](https://travis-ci.org/andela-cofor/Document-Management-System)
+[![Code Climate](https://codeclimate.com/github/andela-cofor/Document-Management-System/badges/gpa.svg)](https://codeclimate.com/github/andela-cofor/Document-Management-System)
 
 # Document-Management-System
 
