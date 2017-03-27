@@ -13,6 +13,9 @@ module.exports = {
       content: {
         type: Sequelize.STRING
       },
+      access: {
+        type: Sequelize.STRING
+      },
       complete: {
         type: Sequelize.BOOLEAN
       },
