@@ -2,7 +2,6 @@
 [![Code Climate](https://codeclimate.com/github/andela-cofor/Document-Management-System/badges/gpa.svg)](https://codeclimate.com/github/andela-cofor/Document-Management-System)
 [![Coverage Status](https://coveralls.io/repos/github/andela-cofor/Document-Management-System/badge.svg?branch=Development)](https://coveralls.io/github/andela-cofor/Document-Management-System?branch=Development)
 
-
 # Document-Management-System
 
 This is a system (API) that manages documents with users and user roles. Each document defines access rights; the document defines which roles can access it. Also, each document specifies the date it was published. It is built with NodeJS, Express and Postgres as it's database.
