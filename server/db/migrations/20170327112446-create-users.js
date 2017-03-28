@@ -13,8 +13,8 @@ module.exports = {
       lastName: {
         type: Sequelize.STRING
       },
-      admin: {
-        type: Sequelize.BOOLEAN
+      rolesId: {
+        type: Sequelize.STRING
       },
       password: {
         type: Sequelize.STRING
