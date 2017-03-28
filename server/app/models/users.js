@@ -60,16 +60,16 @@ module.exports = (sequelize, DataTypes) => {
       type: DataTypes.STRING,
       allowNull: false,
     },
-    admin: {
-      type: DataTypes.BOOLEAN,
-      default: false,
-      allowNull: false
+    rolesId: {
+      type: DataTypes.INTEGER,
+      allowNull: false,
+      defaultValue: 2
     },
     active: {
       type: DataTypes.BOOLEAN,
       allowNull: false,
       defaultValue: true
-    }
+    },
   }, {
     validate: {
       validatePassword() {
