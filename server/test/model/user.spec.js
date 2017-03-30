@@ -73,4 +73,21 @@ describe('User Model', () => {
       });
     });
   });
+
+  describe('Unique', () => {
+    uniqueFields.forEach((field) => {
+      const uniqueTest = Object.assign({}, helper.firstUser);
+      uniqueTest[field] = helper.regularUser[field];
+      it(`should fail for existing ${field}`, (done) => {
+        db.Users.create(uniqueTest)
+        .then()
+        .catch((error) => {
+          expect(error.errors[0].message).to.equal(`${field} already exist`);
+          expect(error.errors[0].type).to.equal('unique violation');
+          expect(error.errors[0].path).to.equal(field);
+          done();
+        });
+      });
+    });
+  });
 });
