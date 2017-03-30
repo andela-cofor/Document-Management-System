@@ -21,6 +21,7 @@
   "homepage": "https://github.com/andela-cofor/Document-Management-System#readme",
   "dependencies": {
     "babel-core": "^6.24.0",
+    "babel-preset-es2015": "^6.24.0",
     "bcrypt-nodejs": "0.0.3",
     "body-parser": "^1.17.1",
     "dotenv": "^4.0.0",
