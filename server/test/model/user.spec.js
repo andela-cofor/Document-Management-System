@@ -58,5 +58,19 @@ describe('User Model', () => {
         done();
       });
     });
+
+    it('should not create password which is not up to 8 characters', (done) => {
+      db.Users.create(helper.invalidPassword)
+      .then()
+      .catch((error) => {
+        expect(error.errors[0].message)
+        .to.equal('Minimum of 8 characters is required');
+        expect(error.errors[0].type)
+        .to.equal('Validation error');
+        expect(error.errors[0].path)
+        .to.equal('validatePassword');
+        done();
+      });
+    });
   });
 });

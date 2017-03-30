@@ -8,13 +8,19 @@ const helper = {
     email: faker.internet.email(),
     password: faker.internet.password(),
   },
-
   invalidEmailUser: {
     username: faker.internet.userName(),
     firstName: faker.name.firstName(),
     lastName: faker.name.lastName(),
     email: 'aaaaa',
     password: faker.internet.password(),
+  },
+  invalidPassword: {
+    username: faker.internet.userName(),
+    firstName: faker.name.firstName(),
+    lastName: faker.name.lastName(),
+    email: faker.internet.email(),
+    password: 'obi',
   }
 };
 export default helper;
