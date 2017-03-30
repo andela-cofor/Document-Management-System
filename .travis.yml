@@ -1,10 +1,37 @@
+# language: node_js
+# node_js:
+#     - "stable"
+ 
+# script:
+#     - npm test
+# before_script:
+#     - npm install
+
+# after_script: cat coverage/*lcov.info | ./node_modules/.bin/coveralls
+dist: trusty
 language: node_js
 node_js:
-    - "stable"
- 
-script:
-    - npm test
-before_script:
-    - npm install
+  - stable
 
-after_script: cat coverage/*lcov.info | ./node_modules/.bin/coveralls
+before_install:
+  - export CHROME_BIN=/usr/bin/google-chrome
+  - export DISPLAY=:99.0
+  - sh -e /etc/init.d/xvfb start
+
+
+services:
+  - postgresql
+
+before_script:
+  - psql -c 'drop database if exists cp3_test;' -U postgres
+  - psql -c 'create database cp3_test;' -U postgres
+  - NODE_ENV=test npm run migrate
+
+script:
+  - npm test
+
+after_success:
+  - cat coverage/*lcov.info | ./node_modules/.bin/coveralls
+
+addons:
+  postgresql: "9.3"
