@@ -7,6 +7,17 @@ module.exports = {
         primaryKey: true,
         type: Sequelize.INTEGER
       },
+      ownerId: {
+        type: Sequelize.INTEGER,
+        onDelete: 'CASCADE',
+        references: {
+          model: 'Users',
+          key: 'id'
+        }
+      },
+      ownerRoleId: {
+        type: Sequelize.INTEGER
+      },
       title: {
         type: Sequelize.STRING
       },

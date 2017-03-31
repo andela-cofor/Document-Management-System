@@ -13,6 +13,9 @@ module.exports = (sequelize, DataTypes) => {
         }
       }
     },
+    ownerRoleId: {
+      type: DataTypes.STRING
+    },
     content: {
       type: DataTypes.TEXT,
       allowNull: false,

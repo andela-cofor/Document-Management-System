@@ -39,6 +39,11 @@ const helper = {
   regularRole: {
     id: 1,
     title: 'regular'
+  },
+  publicDocument: {
+    title: faker.company.catchPhrase(),
+    content: faker.lorem.paragraph(),
+    access: 'public'
   }
 };
 export default helper;
