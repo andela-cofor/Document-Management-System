@@ -24,10 +24,17 @@ const helper = {
   },
   firstUser: {
     username: faker.internet.userName(),
+    firstname: faker.name.firstName(),
+    lastname: faker.name.lastName(),
+    email: faker.internet.email(),
+    password: faker.internet.password()
+  },
+  secondUser: {
+    username: faker.internet.userName(),
     firstName: faker.name.firstName(),
     lastName: faker.name.lastName(),
     email: faker.internet.email(),
-    password: faker.internet.password(),
+    password: faker.internet.password()
   }
 };
 export default helper;
