@@ -12,7 +12,7 @@ describe('User Model', () => {
     'email',
     'password'
   ];
-  const uniqueFields = ['username', 'email'];
+  // const uniqueFields = ['username', 'email'];
   const emptyFields = ['firstName', 'lastName'];
   const defaultRoleId = 2;
   let regularUser;
