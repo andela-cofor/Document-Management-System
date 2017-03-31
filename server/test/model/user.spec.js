@@ -119,8 +119,10 @@ describe('User Model', () => {
           .catch((error) => {
             expect(error.errors[0].message)
               .to.equal('This field cannot be empty');
-            expect(error.errors[0].type).to.equal('Validation error');
-            expect(error.errors[0].path).to.equal(field);
+            expect(error.errors[0].type)
+            .to.equal('Validation error');
+            expect(error.errors[0].path)
+            .to.equal(field);
             done();
           });
       });
@@ -133,8 +135,10 @@ describe('User Model', () => {
       db.Users.findOne({ where: { email: regularUser.email } })
         .then((user) => {
           decryptPassword = user.validPassword(helper.regularUser.password);
-          expect(decryptPassword).to.be.equal(true);
-          expect(user.password).to.not.equal(helper.regularUser.password);
+          expect(decryptPassword)
+          .to.be.equal(true);
+          expect(user.password)
+          .to.not.equal(helper.regularUser.password);
         });
     });
   });
@@ -152,13 +156,18 @@ describe('User Model', () => {
         });
       });
     });
+
     it('should ensure that password is hashed', (done) => {
       db.Users.findById(UpdateUser.id)
       .then((user) => {
-        expect(user.dataValues.password).is.not.equal(regularUser.password);
-        expect(user.dataValues.id).to.equal(regularUser.id);
-        expect(user.dataValues.firstName).to.not.equal(regularUser.firstname);
-        expect(user.dataValues.email).to.equal(regularUser.email);
+        expect(user.dataValues.password)
+        .is.not.equal(regularUser.password);
+        expect(user.dataValues.id)
+        .to.equal(regularUser.id);
+        expect(user.dataValues.firstName)
+        .to.not.equal(regularUser.firstname);
+        expect(user.dataValues.email)
+        .to.equal(regularUser.email);
         done();
       });
     });

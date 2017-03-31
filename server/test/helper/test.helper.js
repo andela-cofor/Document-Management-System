@@ -35,6 +35,10 @@ const helper = {
     lastName: faker.name.lastName(),
     email: faker.internet.email(),
     password: faker.internet.password()
+  },
+  regularRole: {
+    id: 1,
+    title: 'regular'
   }
 };
 export default helper;
