@@ -11,7 +11,7 @@ services:
   - postgres
 
 before_script:
-    - createdb dms_test
+    - createdb dms-test
     - npm run migrate:test
     - npm install
 
