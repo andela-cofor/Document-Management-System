@@ -1,33 +1,6 @@
-# language: node_js
-# node_js:
-#     - "stable"
-
-# before_install:
-#   - export CHROME_BIN=/usr/bin/google-chrome
-#   - export DISPLAY=:99.0
-#   - sh -e /etc/init.d/xvfb start
-
-# services:
-#   - postgresql
-
-# before_script:
-#     - createdb dms-test
-#     - npm run migrate:test
-#     - npm install
-
-# script:
-#   - npm test
-
-# after_success:
-#   - cat coverage/*lcov.info | ./node_modules/.bin/coveralls 
-
-# addons:
-#   postgresql: "9.3"
-
-
 language: node_js
 node_js:
-- "stable"
+    - "stable"
 
 before_install:
   - export CHROME_BIN=/usr/bin/google-chrome
@@ -37,11 +10,16 @@ before_install:
 services:
   - postgresql
 
+before_script:
+    - createdb dms-test
+    - npm run migrate:test
+    - npm install
+
 script:
   - npm test
 
 after_success:
-  - - cat coverage/*lcov.info | ./node_modules/.bin/coveralls 
+  - cat coverage/*lcov.info | ./node_modules/.bin/coveralls 
 
 addons:
   postgresql: "9.3"
