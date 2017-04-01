@@ -11,7 +11,7 @@ services:
   - postgresql
 
 before_script:
-    - createdb dms-test
+    - createdb dms_test
     - npm run migrate:test
     - npm install
 
@@ -23,4 +23,3 @@ after_success:
 
 addons:
   postgresql: "9.3"
-  
