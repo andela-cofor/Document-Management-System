@@ -8,10 +8,10 @@ before_install:
   - sh -e /etc/init.d/xvfb start
 
 services:
-  - postgresql
+  - postgres
 
 before_script:
-    - createdb dms_test
+    - psql -c 'create database dms_test;' -U postgres
     - npm run migrate:test
     - npm install
 
