@@ -1,26 +1,19 @@
+// import dotenv from 'dotenv';
+const dotenv = require('dotenv');
+
+dotenv.config();
+
 module.exports = {
   development: {
-    username: 'chineduofor',
-    password: 'null',
-    database: 'dms-dev',
-    host: '127.0.0.1',
-    port: 5432,
+    use_env_variable: 'DATABASE_URL_DEV',
     dialect: 'postgres'
   },
   test: {
-    username: 'chineduofor',
-    password: 'null',
-    database: 'dms-dev',
-    host: '127.0.0.1',
-    port: 5432,
+    use_env_variable: 'DATABASE_URL_TEST',
     dialect: 'postgres'
   },
   production: {
-    username: 'chineduofor',
-    password: 'null',
-    database: 'dms-dev',
-    host: '127.0.0.1',
-    port: 5432,
+    use_env_variable: 'DATABASE_URL_PROD',
     dialect: 'postgres'
   }
 };

@@ -14,7 +14,7 @@ module.exports = {
         type: Sequelize.STRING
       },
       rolesId: {
-        type: Sequelize.STRING
+        type: Sequelize.INTEGER
       },
       password: {
         type: Sequelize.STRING
@@ -28,6 +28,10 @@ module.exports = {
       createdAt: {
         allowNull: false,
         type: Sequelize.DATE
+      },
+      active: {
+        type: Sequelize.BOOLEAN,
+        allowNull: false
       },
       updatedAt: {
         allowNull: false,

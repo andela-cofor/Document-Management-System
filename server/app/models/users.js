@@ -52,7 +52,7 @@ module.exports = (sequelize, DataTypes) => {
       validate: {
         isEmail: {
           args: true,
-          msg: 'email exist'
+          msg: 'Input a valid email address'
         }
       }
     },
