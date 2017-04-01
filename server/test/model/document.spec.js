@@ -75,8 +75,10 @@ describe('Document Model', () => {
           .catch((error) => {
             expect(error.errors[0].message)
               .to.equal('This field cannot be empty');
-            expect(error.errors[0].type).to.equal('Validation error');
-            expect(error.errors[0].path).to.equal(field);
+            expect(error.errors[0].type)
+              .to.equal('Validation error');
+            expect(error.errors[0].path)
+            .to.equal(field);
             done();
           });
       });
