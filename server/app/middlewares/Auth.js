@@ -30,7 +30,6 @@ const Auth = {
    * @returns {void|Object} response object or void
    * */
   validateUserInput(req, res, next) {
-    console.log('where');
     if (req.body.rolesId && req.body.rolesId === 1) {
       return res.status(403)
         .send({
@@ -425,7 +424,7 @@ const Auth = {
    */
   modifyRolePermission(req, res, next) {
     db.Roles.findById(req.params.id)
-      .then((roles) => {  
+      .then((roles) => {
         if (!roles) {
           return res.status(404)
             .send({

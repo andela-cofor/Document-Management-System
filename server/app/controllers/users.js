@@ -2,8 +2,6 @@ import db from '../../app/models/';
 import Auth from '../middlewares/Auth';
 import Helper from '../Helper/Helper';
 
-
-
 const User = {
   /**
     * Creates a new user
@@ -46,7 +44,6 @@ const User = {
           user.update({ active: true });
           const token = Auth.getToken(user);
           user = Helper.getUserProfile(user);
-          console.log(user.password);
           return res.status(200)
             .send({
               message: 'You have successfully logged in',
