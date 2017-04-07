@@ -1,8 +1,5 @@
-const router = require('express').Router();
+import userRouter from '../routes/users';
+import rolesRouter from '../routes/roles';
+import docRoutes from '../routes/documents';
 
-router.route('/')
- .get((req, res) => {
-   res.status(200).send({ message: 'Welcome to DMS API' });
- });
-
-module.exports = router;
+export { userRouter, rolesRouter, docRoutes };

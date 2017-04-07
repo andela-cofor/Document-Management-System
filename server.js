@@ -9,7 +9,9 @@ const app = express();
 app.use(parser.urlencoded({ extended: true }));
 app.use(parser.json());
 
-app.use('/', route);
+app.use('/', route.userRouter);
+app.use('/', route.rolesRouter);
+app.use('/', route.docRoutes);
 
 app.listen(port, () => {
  console.log(`Server started on ${port}`);
