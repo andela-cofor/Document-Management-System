@@ -137,6 +137,49 @@ const Helper = {
       'updatedAt'
     ];
   },
+  /**
+   * @param {Object} data document response from the database
+   * Get documents's attributes'
+   * @returns {Object} return user's attributes
+   */
+  getDocument(data) {
+    return {
+      id: data.id,
+      title: data.title,
+      content: data.content,
+      access: data.access,
+      ownerId: data.ownerId,
+      createdAt: data.createdAt,
+      updatedAt: data.updatedAt
+    };
+  },
+  /**
+   * Check if document's access level is public
+   * @param {Object} doc object
+   * @returns {Boolean} true or false
+   */
+  isPublic(doc) {
+    return doc.access === 'public';
+  },
+  /**
+   * Check for document's owner
+   * @param {Object} doc object
+   * @param {Object} req request object
+   * @returns {Boolean} true or false
+   */
+  isOwnerDoc(doc, req) {
+    return doc.ownerId === req.tokenDecode.userId;
+  },
+  /**
+   * Check for document's role permission
+   * @param {Object} doc object
+   * @param {Object} req request object
+   * @returns {Boolean} true or false
+   */
+  hasRoleAccess(doc, req) {
+    return (doc.access === 'role'
+      && doc.ownerRoleId === req.tokenDecode.roleId);
+  },
 };
 
 export default Helper;

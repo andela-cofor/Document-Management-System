@@ -13,7 +13,7 @@ rolesRouter.route('/roles')
     Auth.hasAdminPermission,
     Roles.getAll);
 
-
+// Updates roles, delete roles, get roles
 rolesRouter.route('/roles/:id')
   .put(Auth.verifyToken,
     Auth.hasAdminPermission,

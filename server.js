@@ -11,6 +11,7 @@ app.use(parser.json());
 
 app.use('/', route.userRouter);
 app.use('/', route.rolesRouter);
+app.use('/', route.docRoutes);
 
 app.listen(port, () => {
  console.log(`Server started on ${port}`);
