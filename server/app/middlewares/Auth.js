@@ -416,6 +416,51 @@ const Auth = {
       })
       .catch(err => res.status(500).send(err.errors));
   },
+  /**
+   * Check for role edit and delete permission
+   * @param {Object} req req object
+   * @param {Object} res response object
+   * @param {Object} next Move to next controller handler
+   * @returns {void|Object} response object or void
+   */
+  modifyRolePermission(req, res, next) {
+    db.Roles.findById(req.params.id)
+      .then((roles) => {  
+        if (!roles) {
+          return res.status(404)
+            .send({
+              message: 'This role does not exist'
+            });
+        }
+        if (Helper.isAdmin(roles.id) || Helper.isRegular(roles.id)) {
+          return res.status(403)
+            .send({
+              message: 'You are not permitted to modify this role'
+            });
+        }
+        req.roleInstance = roles;
+        next();
+      });
+  },
+  /**
+   * Checks if title is present in the request body
+   * @param {Object} req req object
+   * @param {Object} res response object
+   * @param {Object} next Move to next controller handler
+   * @returns {void|Object} response object or void
+   */
+  checkTitle(req, res, next) {
+    db.Roles.findById(req.params.id)
+      .then(() => {
+        if (!req.body.title) {
+          return res.status(400)
+            .send({
+              message: 'Please input a value to update role with'
+            });
+        }
+        next();
+      });
+  },
 };
 
 export default Auth;
