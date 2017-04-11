@@ -51,13 +51,13 @@ const Auth = {
     if (!firstName) {
       return res.status(400)
         .send({
-          message: 'Enter a valid firstname'
+          message: 'Enter a valid firstName'
         });
     }
     if (!lastName) {
       return res.status(400)
         .send({
-          message: 'Enter a valid lastname'
+          message: 'Enter a valid lastName'
         });
     }
     if (!email) {
