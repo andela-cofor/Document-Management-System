@@ -1,7 +1,7 @@
 import swal from 'sweetalert';
 import { connect } from 'react-redux';
 import React, { Component } from 'react';
-import { userLoginRequest } from '../actions/loginAction';
+import { userLoginRequest } from '../../actions/authActions';
 
 class LoginForm extends Component {
   constructor(props) {
@@ -14,13 +14,13 @@ class LoginForm extends Component {
     this.onSubmit = this.onSubmit.bind(this);
   }
 
-  onChange(e) {
-    this.setState({ [e.target.name]: e.target.value });
+  onChange(event) {
+    this.setState({ [event.target.name]: event.target.value });
   }
 
-  onSubmit(e) {
-    e.preventDefault();
-    this.props.userLoginRequest(this.state).then((res) => {
+  onSubmit(event) {
+    event.preventDefault();
+    this.props.userLoginRequest(this.state).then(() => {
       this.context.router.history.push('/app/');
     })
     .catch((err) => {

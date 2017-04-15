@@ -1,7 +1,5 @@
 import swal from 'sweetalert';
-import { connect } from 'react-redux';
 import React, { Component } from 'react';
-import { userSignupRequest } from '../actions/signupActions';
 
 class SignupForm extends Component {
   constructor(props) {
@@ -17,13 +15,17 @@ class SignupForm extends Component {
     this.onSubmit = this.onSubmit.bind(this);
   }
 
-  onChange(e) {
-    this.setState({ [e.target.name]: e.target.value });
+  onChange(event) {
+    this.setState({ [event.target.name]: event.target.value });
   }
 
-  onSubmit(e) {
-    e.preventDefault();
-    this.props.userSignupRequest(this.state).then(() => {
+  onSubmit(event) {
+    event.preventDefault();
+    this.props.userSignupRequest(this.state).then((res) => {
+      // this.props.addFlashMessage({
+      //   type: 'success',
+      //   text: 'You signed up successfully, Welcome!'
+      // });
       this.context.router.history.push('/app/');
     })
     .catch((err) => {
@@ -111,11 +113,12 @@ class SignupForm extends Component {
 }
 
 SignupForm.propTypes = {
-  userSignupRequest: React.PropTypes.func.isRequired
+  userSignupRequest: React.PropTypes.func.isRequired,
+  addFlashMessage: React.PropTypes.func.isRequired
 };
 
 SignupForm.contextTypes = {
   router: React.PropTypes.object.isRequired
 };
 
-export default connect(null, { userSignupRequest })(SignupForm);
+export default SignupForm;

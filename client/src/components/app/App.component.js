@@ -1,9 +1,9 @@
 import { browserHistory } from 'react-router';
 import React, { Component } from 'react';
 import { BrowserRouter, Route } from 'react-router-dom';
-import Index from './index.component';
-import LoginPage from './LoginPage.component';
-import SignupPage from './SignupPage.component';
+import Index from '../homepage/index.component';
+import LoginPage from '../login/LoginPage.component';
+import SignupPage from '../signup/SignupPage.component';
 
 class App extends Component {
   /**
