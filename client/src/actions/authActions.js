@@ -13,7 +13,6 @@ export function setCurrentUser(user) {
 
 export function logout() {
   return (dispatch) => {
-    console.log(dispatch);
     localStorage.removeItem('token');
     setHeaderToken(false);
     dispatch(setCurrentUser({}));
@@ -25,6 +24,7 @@ export function logout() {
       closeOnConfirm: false,
       html: false
     });
+    
   }
 }
 

@@ -11,6 +11,7 @@ class Navbar extends Component {
   logout(event) {
     event.preventDefault();
     this.props.logout();
+    this.context.router.history.push('/app/login');
   }
   render() {
     const { isAuthenticated } = this.props.auth;
@@ -51,6 +52,10 @@ Navbar.propTypes = {
   isLoginActive: React.PropTypes.string.isRequired,
   isSignupActive: React.PropTypes.string.isRequired,
   logout: React.PropTypes.func.isRequired
+};
+
+Navbar.contextTypes = {
+  router: React.PropTypes.object.isRequired
 };
 
 function mapStateToProps(state) {
