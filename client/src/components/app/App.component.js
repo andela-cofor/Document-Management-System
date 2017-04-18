@@ -4,6 +4,7 @@ import { BrowserRouter, Route } from 'react-router-dom';
 import Index from '../homepage/index.component';
 import LoginPage from '../login/LoginPage.component';
 import SignupPage from '../signup/SignupPage.component';
+import Document from '../documents/DocumentPage.component';
 
 class App extends Component {
   /**
@@ -18,6 +19,7 @@ class App extends Component {
           <Route path="/app/" component={Index} />
           <Route path="/app/login" component={LoginPage} />
           <Route path="/app/signup" component={SignupPage} />
+          <Route path="/app/document" component={Document} />
         </div>
       </BrowserRouter>
     );

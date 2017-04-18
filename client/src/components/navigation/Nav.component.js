@@ -18,12 +18,12 @@ class Navbar extends Component {
     return (
       <nav>
         <div className="nav-wrapper">
-          <div className="brand-logo">Document Management System</div>
+          <a href="/app/home"><div className="brand-logo">Document Management System</div></a>
           <ul id="nav-mobile" className="right hide-on-med-and-down">
             <li className={this.props.isHomeActive}>
               {isAuthenticated
                 ? <a href="/app/document">Document</a>
-                : <a href="/app/home">Home</a>
+                : <a href="/app/home" />
               }
             </li>
             <li className={this.props.isLoginActive}>
