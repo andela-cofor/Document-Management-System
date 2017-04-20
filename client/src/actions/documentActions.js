@@ -78,7 +78,10 @@ export function updateDocument(data) {
     return axios.put(`/documents/${data.id}`, data)
       .then(()=> {window.location = '/app/document'})
       .then(res => res.data)
-      .then(data => dispatch(documentUpdated(data)));
+      .then(data => dispatch(documentUpdated(data)))
+      .catch((err) => {
+        Materialize.toast(err.response.data.message, 4000, 'rounded');
+      });
   };
 }
 
@@ -88,6 +91,9 @@ export function deleteDocument(id) {
       .then((res) => {
         Materialize.toast(res.data.message, 4000, 'rounded');
       })
-      .then(data => dispatch(documentDeleted(id)));
+      .then(data => dispatch(documentDeleted(id)))
+      .catch((err) => {
+        Materialize.toast(err.response.data.message, 4000, 'rounded');
+      });
   };
 }

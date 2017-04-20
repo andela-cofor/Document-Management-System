@@ -43,7 +43,7 @@ class ProfilePageForm extends Component {
 
   render() {
     return (
-      <div>
+      <div className="pro-form">
         <form className="col s12" method="post" onSubmit={(e) => this.onSubmit(e)}>
           <Row>
             <Input

@@ -119,3 +119,10 @@ button:focus {
     margin: 5% 12%;
     padding: 5%
 }
+
+.pro-form {
+    width: 1000px;
+    box-shadow: 10px 10px 30px #333;
+    margin: 5% 12%;
+
+}

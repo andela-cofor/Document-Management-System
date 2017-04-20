@@ -10,7 +10,3 @@ export default function user(state = [], action = {}) {
     default: return state;
   }
 }
-
-
-
-
