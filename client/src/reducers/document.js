@@ -30,7 +30,6 @@ export default function documents(state = [], action = {}) {
     case DOCUMENT_DELETED:
       return state.filter(item => item.id !== action.documentId)
     case SET_DOCUMENTS:
-      console.log(action.documents);
       return action.documents;
     default: return state;
   }

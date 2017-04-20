@@ -19,7 +19,12 @@ class Navbar extends Component {
     return (
       <nav>
         <div className="nav-wrapper">
-          <a href="/app/home"><div className="brand-logo">Document Management System</div></a>
+          <a href="/app/document"><div className="brand-logo">Document Management System</div></a>
+          {isAuthenticated
+            ? <a href="/app/document"><div className="brand-logo">
+              Document Management System</div></a>
+            : <a href="/app/login"><div className="brand-logo">Document Management System</div></a>
+          }
           <ul id="nav-mobile" className="right hide-on-med-and-down">
             <li className={this.props.isHomeActive}>
               {isAuthenticated
@@ -29,7 +34,7 @@ class Navbar extends Component {
             </li>
             <li className={this.props.isLoginActive}>
               {isAuthenticated
-                ? <a href="/app/profile" >Profile</a>
+                ? <a href="/app/profile">Profile</a>
                 : <a href="/app/login">Login</a>
               }
             </li>

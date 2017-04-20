@@ -75,15 +75,19 @@ export function fetchDocument(id) {
 
 export function updateDocument(data) {
   return (dispatch) => {
-    return axios.put(`/documents/${data.id}`)
+    return axios.put(`/documents/${data.id}`, data)
+      .then(()=> {window.location = '/app/document'})
       .then(res => res.data)
-      .then(data => dispatch(documentUpdated(data.document)));
+      .then(data => dispatch(documentUpdated(data)));
   };
 }
+
 export function deleteDocument(id) {
   return (dispatch) => {
     return axios.delete(`/documents/${id}`)
-      .then(res => res.data)
+      .then((res) => {
+        Materialize.toast(res.data.message, 4000, 'rounded');
+      })
       .then(data => dispatch(documentDeleted(id)));
   };
 }

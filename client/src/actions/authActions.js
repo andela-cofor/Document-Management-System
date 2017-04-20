@@ -1,8 +1,7 @@
 import axios from 'axios';
 import jwt from 'jsonwebtoken';
-import swal from 'sweetalert';
 import setHeaderToken from '../../utils/setHeaderToken';
-import { SET_CURRENT_USER } from './types';
+import { SET_CURRENT_USER, SET_USER_ID } from './types';
 
 export function setCurrentUser(user) {
   return {
@@ -11,40 +10,32 @@ export function setCurrentUser(user) {
   };
 }
 
+export function setUserID(id) {
+  return {
+    type: SET_USER_ID,
+    id
+  };
+}
+
 export function logout() {
   return (dispatch) => {
     localStorage.removeItem('token');
     setHeaderToken(false);
     dispatch(setCurrentUser({}));
-    swal({
-      title: 'Logout Succesful',
-      type: 'success',
-      confirmButtonColor: '#9068be',
-      confirmButtonText: 'Ok',
-      closeOnConfirm: false,
-      html: false
-    });
-    
-  }
+    Materialize.toast('You have logged out succesfully', 4000, 'rounded');
+  };
 }
 
 export function userLoginRequest(userData) {
   return (dispatch) => {
     return axios.post('/users/login', userData)
       .then((res) => {
-        swal({
-          title: 'Login Succesful',
-          text: res.data.message,
-          type: 'success',
-          confirmButtonColor: '#9068be',
-          confirmButtonText: 'Ok',
-          closeOnConfirm: false,
-          html: false
-        });
+        Materialize.toast(res.data.message, 4000, 'rounded');
         const token = res.data.token;
         localStorage.setItem('token', token);
         setHeaderToken(token);
         dispatch(setCurrentUser(jwt.decode(token)));
+        dispatch(setUserID(res.data.user.id));
       });
   };
 }

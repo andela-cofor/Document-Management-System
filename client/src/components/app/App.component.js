@@ -5,6 +5,8 @@ import Index from '../homepage/index.component';
 import LoginPage from '../login/LoginPage.component';
 import SignupPage from '../signup/SignupPage.component';
 import Document from '../documents/DocumentPage.component';
+import Create from '../documents/DocumentCreatePage.component';
+import ProfilePage from '../ProfilePage/ProfilePage.component';
 
 class App extends Component {
   /**
@@ -20,6 +22,8 @@ class App extends Component {
           <Route path="/app/login" component={LoginPage} />
           <Route path="/app/signup" component={SignupPage} />
           <Route path="/app/document" component={Document} />
+          <Route path="/app/create" component={Create} />
+          <Route path="/app/profile" component={ProfilePage} />
         </div>
       </BrowserRouter>
     );

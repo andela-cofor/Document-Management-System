@@ -1,4 +1,3 @@
-import swal from 'sweetalert';
 import React, { Component } from 'react';
 
 class SignupForm extends Component {
@@ -22,22 +21,10 @@ class SignupForm extends Component {
   onSubmit(event) {
     event.preventDefault();
     this.props.userSignupRequest(this.state).then((res) => {
-      // this.props.addFlashMessage({
-      //   type: 'success',
-      //   text: 'You signed up successfully, Welcome!'
-      // });
-      this.context.router.history.push('/app/');
+      this.context.router.history.push('/app/document');
     })
     .catch((err) => {
-      swal({
-        title: 'Error!',
-        text: err.response.data.message,
-        type: 'error',
-        confirmButtonColor: '#9068be',
-        confirmButtonText: 'Ok',
-        closeOnConfirm: false,
-        html: false
-      });
+      Materialize.toast(err.response.data.message, 4000, 'rounded');
     });
   }
 
