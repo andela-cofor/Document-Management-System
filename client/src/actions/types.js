@@ -8,3 +8,9 @@ export const DOCUMENT_FETCHED = 'DOCUMENT_FETCHED';
 export const DOCUMENT_UPDATED = 'DOCUMENT_UPDATED';
 export const DOCUMENT_DELETED = 'DOCUMENT_DELETED';
 export const SEARCH_RESULTS = 'SEARCH_RESULTS';
+
+export const SET_ROLE_ID = 'SET_ROLE_ID';
+
+export const SET_USERS = 'SET_USERS';
+export const USERS_FETCHED = 'USERS_FETCHED';
+export const USER_DELETED = 'USER_DELETED';

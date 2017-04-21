@@ -74,6 +74,19 @@ class ProfilePageForm extends Component {
           <Row>
             <Input
               s={6}
+              value="Username:"
+            />
+            <Input
+              s={6}
+              name="username"
+              value={this.state.username}
+              onChange={(event) => this.onChange(event)}
+              required
+            />
+          </Row>
+          <Row>
+            <Input
+              s={6}
               value="Email:"
             />
             <Input

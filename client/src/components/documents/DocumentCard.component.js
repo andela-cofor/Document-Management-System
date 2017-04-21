@@ -39,7 +39,7 @@ class DocumentCard extends Component {
   render() {
     return (
       <div className="col s4">
-        <div className="card medium qBox">
+        <div className="card small qBox">
           <div className="card-image">
             <img className="activator" src="http://materializecss.com/images/sample-1.jpg" />
           </div>

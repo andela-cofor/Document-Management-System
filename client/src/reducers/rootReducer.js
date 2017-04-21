@@ -4,6 +4,7 @@ import auth from '../reducers/auth';
 import documents from '../reducers/document';
 import user from '../reducers/profile';
 import search from '../reducers/search';
+import users from '../reducers/users';
 
 export default combineReducers({
   auth,
@@ -11,4 +12,5 @@ export default combineReducers({
   documents,
   user,
   search,
+  users,
 });

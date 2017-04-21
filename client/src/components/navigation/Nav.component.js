@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { logout } from '../../actions/authActions';
 
+
 class Navbar extends Component {
   /**
    * renders the Nav component
@@ -15,7 +16,6 @@ class Navbar extends Component {
   }
   render() {
     const { isAuthenticated } = this.props.auth;
-
     return (
       <nav>
         <div className="nav-wrapper">
@@ -26,6 +26,12 @@ class Navbar extends Component {
             : <a href="/app/login"><div className="brand-logo">Document Management System</div></a>
           }
           <ul id="nav-mobile" className="right hide-on-med-and-down">
+            <li>
+              {(this.props.roles === 1)
+                ? <a href="/app/users">Users</a>
+                : <a href="/app/home" />
+              }
+            </li>
             <li className={this.props.isHomeActive}>
               {isAuthenticated
                 ? <a href="/app/document">Document</a>
@@ -66,6 +72,7 @@ Navbar.contextTypes = {
 function mapStateToProps(state) {
   return {
     auth: state.auth,
+    roles: state.auth.roles
   };
 }
 
