@@ -3,13 +3,17 @@ import DocumentCard from './DocumentCard.component';
 
 export default function DocumentsList({ documents, deleteDocument, updateDocument }) {
   const emptyMessage = (
-    <p>There are no documents yet in your collection.</p>
+    <p className="qBox1"><strong>There are no documents yet in your collection.</strong></p>
   );
 
   const documentsList = (
     <div className="row">
       {documents.map(document =>
-        <DocumentCard document={document} key={document.id} deleteDocument={deleteDocument} updateDocument={updateDocument} 
+        <DocumentCard 
+          document={document}
+          key={document.id}
+          deleteDocument={deleteDocument}
+          updateDocument={updateDocument}
         />)}
     </div>
   );

@@ -21,20 +21,26 @@ class Navbar extends Component {
         <div className="nav-wrapper">
           <a href="/app/document"><div className="brand-logo">Document Management System</div></a>
           {isAuthenticated
-            ? <a href="/app/document"><div className="brand-logo">
+            ? <a href="/app/"><div className="brand-logo">
               Document Management System</div></a>
             : <a href="/app/login"><div className="brand-logo">Document Management System</div></a>
           }
           <ul id="nav-mobile" className="right hide-on-med-and-down">
             <li>
               {(this.props.roles === 1)
-                ? <a href="/app/users">Users</a>
+                ? <a href="/app/users">All Users</a>
+                : <a href="/app/home" />
+              }
+            </li>
+            <li>
+              {(this.props.roles === 1)
+                ? <a href="/app/all/document">All Documents</a>
                 : <a href="/app/home" />
               }
             </li>
             <li className={this.props.isHomeActive}>
               {isAuthenticated
-                ? <a href="/app/document">Document</a>
+                ? <a href="/app/document">My Documents</a>
                 : <a href="/app/home" />
               }
             </li>

@@ -131,3 +131,9 @@ button:focus {
     margin: 5% 12%;
 
 }
+
+.qBox1{
+    width: 350px;
+    margin-left: 400px;
+    box-shadow: 10px 10px 30px #333;
+}

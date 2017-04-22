@@ -1,0 +1,62 @@
+.custom-intro {
+  color: #EFEFEF;
+  width: 70vw;
+  background-color: #222222;
+  max-width: 500px;
+  font-size:16px;
+}
+
+.custom-intro .introjs-button {
+  padding: 15px;
+  margin: 10px;
+  background-color: transparent;
+  border-radius: 40%;
+  border: 1px solid #0088CC;
+  color: white;
+  font-size: 14px;
+  background-image: none;
+  text-shadow: none;
+}
+
+.custom-intro .introjs-button:hover {
+  background-color: #0088CC;
+}
+
+.custom-intro .introjs-button:active {
+  background-color: #0088CC;
+}
+
+.custom-intro .introjs-nextbutton {
+  background-color: transparent;
+}
+
+.custom-intro .introjs-nextbutton:hover {
+  background-color: #0088CC;
+  border-radius: none;
+}
+
+.introjs-arrow.right {
+  border-left-color: #222222;
+}
+
+.introjs-arrow.left {
+  border-right-color: #222222;
+}
+
+.introjs-arrow.top {
+  border-bottom-color: #222222;
+}
+
+.introjs-arrow.bottom {
+  border-top-color: #222222;
+}
+
+.introjs-helperNumberLayer {
+  top: 150px;
+  left: -40px;
+}
+
+.custom-step-number {
+  top: 10px;
+  left:-2px;
+}

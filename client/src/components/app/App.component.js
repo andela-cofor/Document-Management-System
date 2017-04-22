@@ -8,6 +8,7 @@ import Document from '../documents/DocumentPage.component';
 import Create from '../documents/DocumentCreatePage.component';
 import ProfilePage from '../ProfilePage/ProfilePage.component';
 import UsersPage from '../users/UsersPage.component';
+import AllDocumentsPage from '../documents/AllDocumentsPage.component';
 
 class App extends Component {
   /**
@@ -26,6 +27,7 @@ class App extends Component {
           <Route path="/app/create" component={Create} />
           <Route path="/app/profile" component={ProfilePage} />
           <Route path="/app/users" component={UsersPage} />
+          <Route path="/app/all/document" component={AllDocumentsPage} />
         </div>
       </BrowserRouter>
     );

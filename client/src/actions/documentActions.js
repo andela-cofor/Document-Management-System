@@ -54,22 +54,29 @@ export function saveDocument(data) {
       .catch(error => {
         throw(error);
       });
+      // .then((res) => {
+      //   console.log(res)
+      // })
   };
 }
 
 export function fetchDocuments() {
+  console.log('here')
   return (dispatch) => {
     return axios.get('/documents')
       .then(res => res.data)
       .then(data => dispatch(setDocuments(data.documents.rows)));
+      // .then((res) => {
+      //   console.log(res);
+      // })
   };
 }
 
 export function fetchDocument(id) {
   return (dispatch) => {
-    return axios.get(`/documents/${id}`)
-      .then(res => res.data)
-      .then(data => dispatch(documentFetched(data.document)));
+    return axios.get(`/users/${id}/documents`)
+    .then(res => res.data)
+    .then(data => dispatch(setDocuments(data.userDocuments.documents.rows)));
   };
 }
 

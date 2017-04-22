@@ -24,7 +24,6 @@ class UsersPage extends React.Component {
       this.props.searchUsers(query);
     }
   }
-  
 
   render() {
     const usersSearchResult = this.props.search;
