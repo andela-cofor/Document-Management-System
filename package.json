@@ -20,6 +20,7 @@
   },
   "homepage": "https://github.com/andela-cofor/Document-Management-System#readme",
   "dependencies": {
+    "babel-watch": "^2.0.6",
     "axios": "^0.16.1",
     "babel-cli": "^6.24.0",
     "babel-core": "^6.24.0",
