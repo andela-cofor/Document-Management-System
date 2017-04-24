@@ -9,7 +9,7 @@
     "start": "babel-watch server.js",
     "migrate:test": "NODE_ENV=test sequelize db:migrate",
     "migrate:prod": "NODE_ENV=production sequelize db:migrate",
-    "heroku-postbuild": "webpack -p --config ./webpack.config.js --progress"
+    "postinstall": "webpack -p --config ./webpack.config.js --progress"
   },
   "repository": {
     "type": "git",
