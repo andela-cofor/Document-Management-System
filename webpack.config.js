@@ -1,9 +1,6 @@
 const webpack = require('webpack');
 const path = require('path');
-
-const GLOBALS = {
-  'process.env.NODE_ENV': JSON.stringify('production')
-};
+const ExtractTextPlugin = require('extract-text-webpack-plugin');
 
 module.exports = {
   entry: [
@@ -22,7 +19,7 @@ module.exports = {
     ]
   },
   resolve: {
-    extensions: ['', '.js']
+    extensions: ['', '.css', '.js']
   },
   output: {
     path: path.join(__dirname, 'client/dist/'),
@@ -41,6 +38,8 @@ module.exports = {
     new webpack.optimize.OccurenceOrderPlugin(),
     new webpack.HotModuleReplacementPlugin(),
     new webpack.NoErrorsPlugin(),
-    new webpack.DefinePlugin(GLOBALS),
+    new ExtractTextPlugin('css/bundle.css', {
+      allChunks: true
+    }),
   ]
 };
