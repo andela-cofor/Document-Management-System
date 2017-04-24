@@ -1,6 +1,5 @@
 const webpack = require('webpack');
 const path = require('path');
-const ExtractTextPlugin = require('extract-text-webpack-plugin');
 
 const GLOBALS = {
   'process.env.NODE_ENV': JSON.stringify('production')
@@ -23,7 +22,7 @@ module.exports = {
     ]
   },
   resolve: {
-    extensions: ['', '.css', '.js']
+    extensions: ['', '.js']
   },
   output: {
     path: path.join(__dirname, 'client/dist/'),
@@ -43,8 +42,5 @@ module.exports = {
     new webpack.HotModuleReplacementPlugin(),
     new webpack.NoErrorsPlugin(),
     new webpack.DefinePlugin(GLOBALS),
-    new ExtractTextPlugin('css/bundle.css', {
-      allChunks: true
-    }),
   ]
 };
