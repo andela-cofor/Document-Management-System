@@ -1,6 +1,10 @@
 const webpack = require('webpack');
 const path = require('path');
 
+const GLOBALS = {
+  'process.env.NODE_ENV': JSON.stringify('production')
+};
+
 module.exports = {
   entry: [
     './client/src/index'
@@ -37,5 +41,6 @@ module.exports = {
     new webpack.optimize.OccurenceOrderPlugin(),
     new webpack.HotModuleReplacementPlugin(),
     new webpack.NoErrorsPlugin(),
+    new webpack.DefinePlugin(GLOBALS),
   ]
 };
