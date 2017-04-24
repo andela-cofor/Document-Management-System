@@ -65,7 +65,7 @@ class DocumentCard extends Component {
             <Modal
               header='Edit Document'
               trigger={
-                <i className="material-icons icon-color">mode_edit</i>
+                <i className="material-icons icon-color edit">mode_edit</i>
                 }
             >
               <form className="col s12" method="post" onSubmit={(e) => this.onSubmit(e)}>
@@ -114,7 +114,7 @@ class DocumentCard extends Component {
               </form>
             </Modal>
             <a href="#" onClick={() => this.props.deleteDocument(this.props.document.id)}>
-              <i className="material-icons icon-color">delete</i>
+              <i className="material-icons icon-color delete">delete</i>
             </a>
           </div>
         </div>

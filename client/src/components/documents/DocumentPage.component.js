@@ -5,8 +5,7 @@ import DocumentsList from './DocumentList.component';
 import { fetchDocuments, deleteDocument, updateDocument, fetchDocument } from '../../actions/documentActions';
 import Search from '../common/Search';
 import { searchDocuments } from '../../actions/searchAction';
-// import startTour from '../../components/tour/tour';
-// import UserTour from '../../components/tour/Tour.component';
+
 
 class DocumentsPage extends React.Component {
   constructor() {
@@ -16,6 +15,7 @@ class DocumentsPage extends React.Component {
 
   componentDidMount() {
     this.props.fetchDocument(this.props.uI);
+    // startTour();
   }
 
   handleSearch(event) {
@@ -40,7 +40,6 @@ class DocumentsPage extends React.Component {
         <div className="row">
           <div className="col s7 push-s8">
             {this.props.documents.length > 0 ? <Search onChange={this.handleSearch.bind(this)} /> : emptyDiv}
-            {/*<UserTour />*/}
           </div>
           <div className="col s5 pull-s7">
             <Link className="btn create-list-link hero-btn qBox add" to="/app/create">

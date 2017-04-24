@@ -18,9 +18,6 @@ class UsersCard extends Component {
     return (
       <div className="col s4">
         <div className="card card2 smal qBox">
-          <div className="card-image">
-            <img className="" src="" />
-          </div>
           <div className="card-content white-text">
             <span className="card-title activator">{this.props.users.firstName} {this.props.users.lastName}</span>
           </div>

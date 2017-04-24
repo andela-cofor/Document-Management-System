@@ -2,7 +2,7 @@ import React, { PropTypes } from 'react';
 import { Button, Icon, Input } from 'react-materialize';
 
 const Search = ({ onChange }) =>
-  <div>
+  <div className="search">
     <Input
       id="search"
       s={6}

@@ -9,7 +9,7 @@ export default function DocumentsList({ documents, deleteDocument, updateDocumen
   const documentsList = (
     <div className="row">
       {documents.map(document =>
-        <DocumentCard 
+        <DocumentCard
           document={document}
           key={document.id}
           deleteDocument={deleteDocument}

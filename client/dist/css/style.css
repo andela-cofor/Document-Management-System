@@ -137,3 +137,25 @@ button:focus {
     margin-left: 400px;
     box-shadow: 10px 10px 30px #333;
 }
+
+.tour-title {
+
+} 
+
+/*.react-user-tour-container div div {
+    background-color: rgb(236, 239, 241);
+}*/
+
+.react-user-tour-close {
+    color: black;
+    width: 0px;
+    height: 0px;
+    position: relative;
+    border-top: 15px solid transparent;
+    border-bottom: 15px solid transparent;
+    border-right: 15px solid rgb(255, 255, 255);
+    left: -15px;
+}
+/*s*/
+
+/*background-color: rgb(236, 239, 241);*/

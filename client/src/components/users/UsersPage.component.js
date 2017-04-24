@@ -32,8 +32,12 @@ class UsersPage extends React.Component {
     
     return (
       <div>
-        <div className="col s7 push-s8">
-          <Search onChange={this.handleSearch.bind(this)} />
+        <div className="row">
+          <div className="col s7 push-s8">
+            <Search onChange={this.handleSearch.bind(this)} />
+          </div>
+          <div className="col s5 pull-s7">
+          </div>
         </div>
         <UsersList
           users={renderedUsers}

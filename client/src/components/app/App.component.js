@@ -9,6 +9,7 @@ import Create from '../documents/DocumentCreatePage.component';
 import ProfilePage from '../ProfilePage/ProfilePage.component';
 import UsersPage from '../users/UsersPage.component';
 import AllDocumentsPage from '../documents/AllDocumentsPage.component';
+// import UserTour from '../../components/tour/Tour.component';
 
 class App extends Component {
   /**
@@ -20,6 +21,7 @@ class App extends Component {
     return (
       <BrowserRouter history={browserHistory}>
         <div>
+          {/*<UserTour />*/}
           <Route path="/app/" component={Index} />
           <Route path="/app/login" component={LoginPage} />
           <Route path="/app/signup" component={SignupPage} />

@@ -65,8 +65,6 @@ AllDocumentsPage.propTypes = {
 };
 
 function mapStateToProps(state) {
-  // console.log(state.auth.user.userId)
-  console.log(state.documents)
   return {
     documents: state.documents,
     search: state.search,
