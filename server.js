@@ -20,7 +20,6 @@ if (process.env.NODE_ENV !== 'production') {
   }));
   app.use(webpackHotMiddleware(compiler));
 }
-app.use(express.static(path.join(__dirname, 'client/dist')));
 app.get('/app/*', (req, res) => {
   res.sendFile(`${__dirname}/client/dist/index.html`);
 });
@@ -30,6 +29,9 @@ app.use(parser.json());
 app.use('/', route.userRouter);
 app.use('/', route.rolesRouter);
 app.use('/', route.docRoutes);
+app.use('/', route.swagger);
+app.use(express.static('server/public'));
+app.use(express.static(path.join(__dirname, 'client/dist')));
 
 app.listen(port, () => {
  console.log(`Server started on ${port}`);

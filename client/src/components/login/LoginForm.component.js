@@ -1,7 +1,6 @@
-import swal from 'sweetalert';
 import { connect } from 'react-redux';
 import React, { Component } from 'react';
-import { userLoginRequest } from '../actions/loginAction';
+import { userLoginRequest } from '../../actions/authActions';
 
 class LoginForm extends Component {
   constructor(props) {
@@ -14,25 +13,17 @@ class LoginForm extends Component {
     this.onSubmit = this.onSubmit.bind(this);
   }
 
-  onChange(e) {
-    this.setState({ [e.target.name]: e.target.value });
+  onChange(event) {
+    this.setState({ [event.target.name]: event.target.value });
   }
 
-  onSubmit(e) {
-    e.preventDefault();
+  onSubmit(event) {
+    event.preventDefault();
     this.props.userLoginRequest(this.state).then((res) => {
-      this.context.router.history.push('/app/');
+      this.context.router.history.push('/app/document');
     })
     .catch((err) => {
-      swal({
-        title: 'Error!',
-        text: err.response.data.message,
-        type: 'error',
-        confirmButtonColor: '#18aa8d',
-        confirmButtonText: 'Ok',
-        closeOnConfirm: false,
-        html: false
-      });
+      Materialize.toast(err.response.data.message, 4000, 'rounded');
     });
   }
 
@@ -64,7 +55,7 @@ class LoginForm extends Component {
             />
           </div>
           <button className="loginButton">
-              Submit
+              Login
            </button>
         </form>
       </div>

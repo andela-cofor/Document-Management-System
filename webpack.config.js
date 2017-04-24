@@ -29,9 +29,13 @@ module.exports = {
     contentBase: './client/dist',
     hot: true
   },
+  node: {
+    net: 'empty',
+    dns: 'empty'
+  },
   plugins: [
     new webpack.optimize.OccurenceOrderPlugin(),
     new webpack.HotModuleReplacementPlugin(),
-    new webpack.NoErrorsPlugin()
+    new webpack.NoErrorsPlugin(),
   ]
 };
