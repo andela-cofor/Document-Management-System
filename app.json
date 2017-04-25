@@ -1,0 +1,21 @@
+{
+  "name": "Document-Management-System",
+  "scripts": {
+  },
+  "env": {
+    "DATABASE_URL_PROD": {
+      "required": true
+    },
+    "SECRET": {
+      "required": true
+    }
+  },
+  "formation": {
+  },
+  "addons": [
+
+  ],
+  "buildpacks": [
+
+  ]
+}

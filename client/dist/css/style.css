@@ -1,0 +1,161 @@
+.nav-wrapper {
+    background-color: #546e7a;
+}
+
+.brand-logo {
+    color: black;
+}
+
+.btn {
+    background-color: #546e7a;
+}
+
+.search {
+    background-color: #546e7a
+}
+
+.drop {
+    color: #546e7a;
+}
+
+input:not([type]):focus:not([readonly]),
+input[type=text]:focus:not([readonly]),
+input[type=password]:focus:not([readonly]),
+input[type=email]:focus:not([readonly]),
+input[type=url]:focus:not([readonly]),
+input[type=time]:focus:not([readonly]),
+input[type=date]:focus:not([readonly]),
+input[type=datetime]:focus:not([readonly]),
+input[type=datetime-local]:focus:not([readonly]),
+input[type=tel]:focus:not([readonly]),
+input[type=number]:focus:not([readonly]),
+input[type=search]:focus:not([readonly]),
+textarea.materialize-textarea:focus:not([readonly]) {
+  border-bottom: 1px solid #546e7a;
+  box-shadow: 0 1px 0 0 #546e7a;
+}
+
+.input-field
+.prefix.active {
+  color: #546e7a;
+}
+
+input:not([type]):focus:not([readonly]) + label,
+input[type=text]:focus:not([readonly]) + label,
+input[type=password]:focus:not([readonly]) + label,
+input[type=email]:focus:not([readonly]) + label,
+input[type=url]:focus:not([readonly]) + label,
+input[type=time]:focus:not([readonly]) + label,
+input[type=date]:focus:not([readonly]) + label,
+input[type=datetime]:focus:not([readonly]) + label,
+input[type=datetime-local]:focus:not([readonly]) + label,
+input[type=tel]:focus:not([readonly]) + label,
+input[type=number]:focus:not([readonly]) + label,
+input[type=search]:focus:not([readonly]) + label,
+textarea.materialize-textarea:focus:not([readonly]) + label {
+  color: #546e7a;
+}
+
+.card {
+  background-color: #546e7a;
+  width:304px;
+}
+
+.card2 {
+  background-color: ;
+  width:304px;
+  height: 160px;
+}
+
+.card-action {
+    width:304px;
+    height: 1px;
+}
+
+.btn .btn-large {
+    text-decoration: none;
+    color: #fff;
+    background-color: #546e7a;
+    text-align: center;
+    letter-spacing: .5px;
+    transition: .2s ease-out;
+    cursor: pointer;
+}
+
+.btn:focus, .btn-large:focus {
+    background-color: #546e7a;
+}
+
+button:focus {
+    outline: none;
+    background-color: #546e7a;
+}
+
+.btn:hover, .btn-large:hover {
+    background-color: #546e7a;
+}
+
+.qBox{
+    box-shadow: 10px 10px 30px #333;
+}
+
+.dropdown-content li>span {
+    font-size: 16px;
+    color: #546e7a;
+    display: block;
+    line-height: 22px;
+    padding: 14px 16px;
+}
+.add {
+    border-radius: 100%;
+    padding-top: 17px;
+    font-size: 3em;
+    height: 70px;
+    border: 0;
+}
+
+.icon-color {
+    color: #ff6d00;
+}
+
+.doc-form {
+    width: 1000px;
+    box-shadow: 10px 10px 30px #333;
+    margin: 5% 12%;
+    padding: 5%
+}
+
+.pro-form {
+    width: 1000px;
+    box-shadow: 10px 10px 30px #333;
+    margin: 5% 12%;
+
+}
+
+.qBox1{
+    width: 350px;
+    margin-left: 400px;
+    box-shadow: 10px 10px 30px #333;
+}
+
+.tour-title {
+
+} 
+
+/*.react-user-tour-container div div {
+    background-color: rgb(236, 239, 241);
+}*/
+
+.react-user-tour-close {
+    color: black;
+    width: 0px;
+    height: 0px;
+    position: relative;
+    border-top: 15px solid transparent;
+    border-bottom: 15px solid transparent;
+    border-right: 15px solid rgb(255, 255, 255);
+    left: -15px;
+}
+/*s*/
+
+/*background-color: rgb(236, 239, 241);*/
