@@ -35,7 +35,7 @@ class DocumentCreateForm extends Component {
       <div className="doc-form">
         <form onSubmit={this.onSubmit}>
           <div className="form-control">
-            <h5>Create a Document </h5>
+            <h5>Create a Document</h5>
             <Row className="form-control">
               <Input
                 placeholder="Title"
@@ -69,10 +69,7 @@ class DocumentCreateForm extends Component {
                 <option className="optionBtn" name="Private"value="private">Private</option>
                 <option className="optionBtn" name="Role" value="role">Role</option>
               </Input>
-
-              <button className="btn waves-effect waves-light">
-              Save
-            </button>
+              <button className="btn waves-effect waves-light">Save</button>
             </Row>
           </div>
         </form>

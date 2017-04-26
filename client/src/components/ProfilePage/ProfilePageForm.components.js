@@ -110,9 +110,7 @@ class ProfilePageForm extends Component {
               required
             />
           </Row>
-          <Button className="" waves="light" type="submit">
-            UPDATE
-          </Button>
+          <button className="" waves="light" type="submit">UPDATE</button>
         </form>
       </div>
     );

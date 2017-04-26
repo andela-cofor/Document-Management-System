@@ -89,9 +89,7 @@ class SignupForm extends Component {
             />
           </div>
           <div className="form-control">
-           <button className="SignupBtn">
-              Sign up
-           </button>
+            <button className="SignupBtn">Sign up</button>
           </div>
         </form>
       </div>

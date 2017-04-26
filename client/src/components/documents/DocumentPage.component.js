@@ -15,7 +15,6 @@ class DocumentsPage extends React.Component {
 
   componentDidMount() {
     this.props.fetchDocument(this.props.uI);
-    // startTour();
   }
 
   handleSearch(event) {
@@ -39,10 +38,12 @@ class DocumentsPage extends React.Component {
         <h1></h1>
         <div className="row">
           <div className="col s7 push-s8">
-            {this.props.documents.length > 0 ? <Search onChange={this.handleSearch.bind(this)} /> : emptyDiv}
+            {this.props.documents.length > 0 
+            ? <Search onChange={this.handleSearch.bind(this)} /> 
+            : emptyDiv}
           </div>
-          <div className="col s5 pull-s7">
-            <Link className="btn create-list-link hero-btn qBox add" to="/app/create">
+          <div className="col s5 pull-s7" id="createdocument add">
+            <Link id="hero-btn" className="add btn create-list-link hero-btn qBox hero-btn" to="/app/create">
               +
             </Link>
           </div>
