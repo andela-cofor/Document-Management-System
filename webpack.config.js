@@ -42,10 +42,5 @@ module.exports = {
     new webpack.optimize.OccurenceOrderPlugin(),
     new webpack.HotModuleReplacementPlugin(),
     new webpack.NoErrorsPlugin(),
-    new webpack.ProvidePlugin({
-      $: 'jquery',
-      jquery: 'jquery',
-      jQuery: 'jquery'
-    })
   ]
 };

@@ -5,7 +5,7 @@
   "description": "This is a system (API) that manages documents with users and user roles. Each document defines access rights; the document defines which roles can access it. Also, each document specifies the date it was published. It is built with NodeJS, Express and Postgres as it's database. Source code employs ES6 syntax traspiled down to ES5 using Babel.",
   "main": "index.js",
   "scripts": {
-    "test": "NODE_ENV=test istanbul cover _mocha -- -R spec server/test/**/*.spec.js --compilers js:babel-core/register",
+    "test": "NODE_ENV=test istanbul cover _mocha -- -R spec server/test/**/*.spec.js client/src/test/reducers/**/*.spec.js --compilers js:babel-core/register",
     "client:test": "./node_modules/mocha/bin/_mocha --require ignore-styles -w --reporter progress .setup.js client/src/test/**/*.spec.js",
     "start": "babel-watch server.js",
     "migrate:test": "NODE_ENV=test sequelize db:migrate",

@@ -64,6 +64,7 @@ class DocumentCreateForm extends Component {
                 name="access"
                 value={this.state.access}
                 onChange={this.onChange}
+                id="access"
               >
                 <option className="optionBtn" name="Public" value="public">Public</option>
                 <option className="optionBtn" name="Private"value="private">Private</option>
