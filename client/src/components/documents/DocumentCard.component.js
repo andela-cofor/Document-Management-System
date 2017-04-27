@@ -70,9 +70,10 @@ class DocumentCard extends Component {
             >
               <form className="col s12" method="post" onSubmit={(e) => this.onSubmit(e)}>
                 <Row>
-                  <Input 
+                  <Input
                     s={6}
-                    value="DOCUMENT ID" />
+                    value="DOCUMENT ID"
+                  />
                   <Input
                     s={6} name="id"
                     value={this.props.document.id}
@@ -85,10 +86,10 @@ class DocumentCard extends Component {
                     value={this.state.title === ''
                     ? this.props.document.title
                     : this.state.title} onChange={(event) => this.onChange(event)}
+                    id="title"
                   />
-                  <Input
+                  <select
                     s={6}
-                    validate
                     type="select"
                     name="access"
                     onChange={(event) => this.onChange(event)}
@@ -97,20 +98,21 @@ class DocumentCard extends Component {
                     <option value="public">Public</option>
                     <option value="private">Private</option>
                     <option value="role">Role</option>
-                  </Input>
+                  </select>
                 </Row>
                 <Row>
                   <textarea
+                    id="content"
                     name="content"
                     value={this.state.content === ''
                     ? this.props.document.content
                     : this.state.content}
-                    onChange={e => this.onChange(e)} label="Content" className="materialize-textarea"
+                    onChange={e => this.onChange(e)}
+                    label="Content"
+                    className="content materialize-textarea"
                   />
                 </Row>
-                <Button className="" waves="light" type="submit">
-                  UPDATE
-                </Button>
+                <Button className="" waves="light" type="submit">UPDATE</Button>
               </form>
             </Modal>
             <a href="#" onClick={() => this.props.deleteDocument(this.props.document.id)}>

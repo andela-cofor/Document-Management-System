@@ -25,6 +25,11 @@ module.exports = {
     publicPath: '/app/',
     filename: 'bundle.js'
   },
+  externals: {
+    'cheerio': 'window',
+    'react/lib/ExecutionEnvironment': true,
+    'react/lib/ReactContext': true,
+  },
   devServer: {
     contentBase: './client/dist',
     hot: true

@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<testsuites errors="0"
+            failures="0"
+            tests="1">
+
+  <testsuite name="Index.spec"
+    errors="0" failures="0" hostname="" id="" package="Index.spec" skipped="0"
+    tests="1" time="4.008" timestamp="Thu, 27 Apr 2017 11:03:26 GMT">
+  
+    <testcase name="Go to home page" classname="Index.spec" time="4.008" assertions="2">
+
+    
+
+    
+    </testcase>
+  
+  
+  </testsuite>
+</testsuites>

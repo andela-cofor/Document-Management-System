@@ -49,13 +49,13 @@ class Navbar extends Component {
             <li className={this.props.isLoginActive}>
               {isAuthenticated
                 ? <a href="/app/profile" className="profile">Profile</a>
-                : <a href="/app/login">Login</a>
+                : <a href="/app/login" id="login">Login</a>
               }
             </li>
             <li className={this.props.isSignupActive}>
               {isAuthenticated
                 ? <a href="/app/logout" onClick={this.logout.bind(this)} className="log-out" >Logout</a>
-                : <a href="/app/signup">Signup</a>
+                : <a href="/app/signup" id="signup">Signup</a>
               }
             </li>
           </ul>
