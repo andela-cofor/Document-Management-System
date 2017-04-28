@@ -226,16 +226,6 @@ describe('DOCUMENT API', () => {
             done();
           });
       });
-
-    it('should return not found when for invlid id', (done) => {
-      superRequest.delete('/documents/999')
-        .set({ 'x-access-token': regularToken2 })
-        .end((err, res) => {
-          expect(res.status).to.equal(404);
-          expect(res.body.message).to.equal('This document does not exist');
-          done();
-        });
-    });
   });
 
   //   describe('GET document /documents/:id', () => {

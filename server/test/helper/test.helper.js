@@ -12,6 +12,13 @@ const helper = {
     id: 3,
     title: 'guest'
   },
+  regularUser2: {
+    username: faker.internet.userName(),
+    firstName: faker.name.firstName(),
+    lastName: faker.name.lastName(),
+    email: faker.internet.email(),
+    password: faker.internet.password()
+  },
   regularUser3: {
     username: faker.internet.userName(),
     firstName: faker.name.firstName(),
@@ -19,12 +26,16 @@ const helper = {
     email: faker.internet.email(),
     password: faker.internet.password(),
   },
-  regularUser2: {
+  regularUser4: {
     username: faker.internet.userName(),
     firstName: faker.name.firstName(),
     lastName: faker.name.lastName(),
     email: faker.internet.email(),
-    password: faker.internet.password()
+    password: faker.internet.password(),
+  },
+  sampleRole: {
+    id: 6,
+    title: 'guestSample'
   },
   invalidEmailUser: {
     username: faker.internet.userName(),
@@ -46,6 +57,14 @@ const helper = {
     lastName: faker.name.lastName(),
     email: faker.internet.email(),
     password: faker.internet.password()
+  },
+  firstUser2: {
+    username: faker.internet.userName(),
+    firstName: faker.name.firstName(),
+    lastName: faker.name.lastName(),
+    email: faker.internet.email(),
+    password: faker.internet.password(),
+    rolesId: 1
   },
   firstUser1: {
     username: faker.internet.userName(),
@@ -72,9 +91,13 @@ const helper = {
     id: 1,
     title: 'regular'
   },
-  regularRole1: {
-    id: 2,
+  regularRole2: {
+    id: 1,
     title: 'regular'
+  },
+  regularRole1: {
+    rolesId: 1,
+    title: 'admin'
   },
   publicDocument: {
     title: 'bla',
