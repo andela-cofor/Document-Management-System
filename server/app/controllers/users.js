@@ -204,7 +204,7 @@ const User = {
     * Route: GET: /search/users/?query=
     * @param {Object} req request object
     * @param {Object} res response object
-    * @returns {void|Response} response object or void
+    * @returns {Response} response object or void
     */
   getUserName(req, res) {
     return res.status(200)

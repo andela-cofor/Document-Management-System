@@ -123,7 +123,7 @@ describe('User API', () => {
 
       it('should allow other users to login', (done) => {
         superRequest.post('/users/login')
-          .send(helper.regularUser)
+          .send(helper.regularUser1)
           .end((err, res) => {
             regularToken = res.body.token;
             expect(res.status)
@@ -290,162 +290,115 @@ describe('User API', () => {
           });
       });
 
-      // it('allow admin to delete a user', (done) => {
-      //   superRequest.delete(`/users/${newUser.id}`)
-      //     .set({ 'x-access-token': adminToken })
-      //     .end((err, res) => {
-      //       expect(res.status).to.equal(200);
-      //       expect(res.body.message).to
-      //         .equal('This account has been successfully deleted');
-      //       done();
-      //     });
-      // });
+      it('allow admin to delete a user', (done) => {
+        superRequest.delete(`/users/${newUser.id}`)
+          .set({ 'x-access-token': adminToken })
+          .end((err, res) => {
+            expect(res.status).to.equal(200);
+            expect(res.body.message).to
+              .equal('This account has been successfully deleted');
+            done();
+          });
+      });
 
-      // it('should not allow a deleted user to access any restricted route',
-      // (done) => {
-      //   superRequest.get('/users/')
-      //     .set({ 'x-access-token': newUSerToken })
-      //     .end((err, res) => {
-      //       expect(res.status).to.equal(404);
-      //       expect(res.body.message).to
-      //         .equal('Account not found, Sign Up or sign in to get access');
-      //       done();
-      //     });
-      // });
+      it('should not allow a deleted user to access any restricted route',
+      (done) => {
+        superRequest.get('/users/')
+          .set({ 'x-access-token': newUSerToken })
+          .end((err, res) => {
+            expect(res.status).to.equal(404);
+            expect(res.body.message).to
+              .equal('Account not found, Sign Up or sign in to get access');
+            done();
+          });
+      });
     });
 
     describe('Update user attributes PUT /users/:id', () => {
-      // it('should update user\'s profile when valid user token is supplied',
-      // (done) => {
-      //   const updateData = {
-      //     firstName: 'chinex',
-      //     lastName: 'ofor',
-      //     password: 'newpassword'
-      //   };
-      //   superRequest.put(`/users/${regularUser.id}`)
-      //     .send(updateData)
-      //     .set({ 'x-access-token': regularToken })
-      //     .end((err, res) => {
-      //       expect(res.status).to.equal(200);
-      //       expect(res.body.message).to.equal('Your profile has been updated');
-      //       expect(res.body.updatedUser.firstName).to.equal('chinedu');
-      //       expect(res.body.updatedUser.lastName).to.equal('ofor');
-      //       done();
-      //     });
-      // });
+      it('should update user\'s profile when valid user token is supplied',
+      (done) => {
+        const updateData = {
+          firstName: 'chinex',
+          lastName: 'ofor',
+          password: 'newpassword'
+        };
+        superRequest.put(`/users/${regularUser.id}`)
+          .send(updateData)
+          .set({ 'x-access-token': regularToken })
+          .end((err, res) => {
+            expect(res.body.message).to.equal('Your profile has been updated');
+            expect(res.body.updatedUser.firstName).to.equal('chinex');
+            expect(res.body.updatedUser.lastName).to.equal('ofor');
+            done();
+          });
+      });
 
-      // it('should return error when passing a null field', (done) => {
-      //   superRequest.put(`/users/${regularUser.id}`)
-      //     .send({ username: '' })
-      //     .set({ 'x-access-token': regularToken })
-      //     .end((err, res) => {
-      //       expect(res.status).to.equal(400);
-      //       expect(res.body.errorArray[0].message).to
-      //         .equal('Input a valid username');
-      //       done();
-      //     });
-      // });
+      it('should return error when passing a null field', (done) => {
+        superRequest.put(`/users/${regularUser.id}`)
+          .send({ username: '' })
+          .set({ 'x-access-token': regularToken })
+          .end((err, res) => {
+            expect(res.status).to.equal(400);
+            expect(res.body.errorArray[0].message).to
+              .equal('Input a valid username');
+            done();
+          });
+      });
 
-      // it('should return error when updating with an existing username',
-      // (done) => {
-      //   superRequest.put(`/users/${regularUser.id}`)
-      //     .send({ username: helper.adminUser.username })
-      //     .set({ 'x-access-token': regularToken })
-      //     .end((err, res) => {
-      //       expect(res.status).to.equal(400);
-      //       expect(res.body.errorArray[0].message)
-      //         .to.equal('username already exist');
-      //       done();
-      //     });
-      // });
+      it('should return error when a user want to update id',
+      (done) => {
+        superRequest.put(`/users/${regularUser.id}`)
+          .send({ id: 10 })
+          .set({ 'x-access-token': regularToken })
+          .end((err, res) => {
+            expect(res.status).to.equal(403);
+            expect(res.body.message)
+              .to.equal('You are not permitted to update your id');
+            done();
+          });
+      });
 
-      // it('should return error when a user want to update id',
-      // (done) => {
-      //   superRequest.put(`/users/${regularUser.id}`)
-      //     .send({ id: 10 })
-      //     .set({ 'x-access-token': regularToken })
-      //     .end((err, res) => {
-      //       expect(res.status).to.equal(403);
-      //       expect(res.body.message)
-      //         .to.equal('You are not permitted to update your id');
-      //       done();
-      //     });
-      // });
+      it('should return not found for invalid user id', (done) => {
+        const data = { username: 'smart', lastName: 'Johnson' };
+        superRequest.put('/users/99999')
+          .send(data)
+          .set({ 'x-access-token': adminToken })
+          .end((err, res) => {
+            expect(res.status).to.equal(404);
+            expect(res.body.message).to.equal('This user does not exist');
+            done();
+          });
+      });
 
-      // it('should return not found for invalid user id', (done) => {
-      //   const data = { username: 'smart', lastName: 'Johnson' };
-      //   superRequest.put('/users/99999')
-      //     .send(data)
-      //     .set({ 'x-access-token': adminToken })
-      //     .end((err, res) => {
-      //       expect(res.status).to.equal(404);
-      //       expect(res.body.message).to.equal('This user does not exist');
-      //       done();
-      //     });
-      // });
+      it(`should return permission denied when regular user want to
+        update another user's profile`, (done) => {
+        const data = { username: 'chinedu', lastname: 'ofor' };
+        superRequest.put(`/users/${newAdminUser.id}`)
+          .send(data)
+          .set({ 'x-access-token': regularToken })
+          .end((err, res) => {
+            expect(res.status).to.equal(401);
+            expect(res.body.message).to
+              .equal('You are not permitted to update this profile');
+            done();
+          });
+      });
 
-      // it(`should return permission denied when regular user want to
-      //   update another user's profile`, (done) => {
-      //   const data = { username: 'chinedu', lastname: 'ofor' };
-      //   superRequest.put(`/users/${newAdminUser.id}`)
-      //     .send(data)
-      //     .set({ 'x-access-token': regularToken })
-      //     .end((err, res) => {
-      //       expect(res.status).to.equal(401);
-      //       expect(res.body.message).to
-      //         .equal('You are not permitted to update this profile');
-      //       done();
-      //     });
-      // });
-
-      // it('should give admin permission to update any user\'s profile',
-      // (done) => {
-      //   const data = { username: 'chinedu', lastname: 'ofor' };
-      //   superRequest.put(`/users/${regularUser.id}`)
-      //     .send(data)
-      //     .set({ 'x-access-token': adminToken })
-      //     .end((err, res) => {
-      //       expect(res.status).to.equal(200);
-      //       expect(res.body.message).to
-      //         .equal('Your profile has been updated');
-      //       expect(res.body.updatedUser.username).to.equal('chinedu');
-      //       expect(res.body.updatedUser.lastname).to.equal('ofor');
-      //       done();
-      //     });
-      // });
-    });
-
-    describe('SEARCH USERS PAGINATION', () => {
-      // const arrayUsers = helper.usersArray();
-      // before((done) => {
-      //   db.Users.bulkCreate(arrayUsers);
-      //   done();
-      // });
-
-      // it('should return search result', (done) => {
-      //   superRequest.get(`/users/search?query=
-      //   ${arrayUsers[0].firstName.substr(1, 6)}`)
-      //     .set({ 'x-access-token': regularToken })
-      //     .end((err, res) => {
-      //       expect(res.body.message).to.equal('Your search was successful');
-      //       done();
-      //     });
-      // });
-
-      // it('should return search result with pagination', (done) => {
-      //   superRequest.get(`/users/search?query=
-      //   ${arrayUsers[0].firstName.substr(1, 6)} 
-      //   ${arrayUsers[2].firstName.substr(1, 6)}`)
-      //     .set({ 'x-access-token': regularToken })
-      //     .end((err, res) => {
-      //       expect(res.body.message).to.equal('Your search was successful');
-      //       expect(res.body.pagination).to.have.property('page_count');
-      //       expect(res.body.pagination).to.have.property('page');
-      //       expect(res.body.pagination).to.have.property('page_size');
-      //       expect(res.body.pagination).to.have.property('total_count');
-      //       done();
-      //     });
-      // });
+      it('should give admin permission to update any user\'s profile',
+      (done) => {
+        const data = { username: 'chinedu', lastname: 'ofor' };
+        superRequest.put(`/users/${regularUser.id}`)
+          .send(data)
+          .set({ 'x-access-token': adminToken })
+          .end((err, res) => {
+            expect(res.status).to.equal(200);
+            expect(res.body.message).to
+              .equal('Your profile has been updated');
+            expect(res.body.updatedUser.username).to.equal('chinedu');
+            expect(res.body.updatedUser.lastName).to.equal('ofor');
+            done();
+          });
+      });
     });
 
     describe('Logout', () => {

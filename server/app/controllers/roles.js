@@ -70,7 +70,7 @@ const Role = {
     * Route: GET: /roles/:id
     * @param {Object} req request object
     * @param {Object} res response object
-    * @returns {void} no returns
+    * @returns {Response|void} no returns
     */
   getRoleById(req, res) {
     db.Roles

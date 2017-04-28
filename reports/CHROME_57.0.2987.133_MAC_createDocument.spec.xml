@@ -1,23 +1,14 @@
 <?xml version="1.0" encoding="UTF-8" ?>
-<testsuites errors="0"
-            failures="0"
+<testsuites errors="3"
+            failures="1"
             tests="1">
 
   <testsuite name="createDocument.spec"
-    errors="0" failures="0" hostname="" id="" package="createDocument.spec" skipped="0"
-    tests="1" time="16.32" timestamp="Thu, 27 Apr 2017 11:03:31 GMT">
+    errors="3" failures="1" hostname="" id="" package="createDocument.spec" skipped="0"
+    tests="1" time="8.204" timestamp="Fri, 28 Apr 2017 10:26:18 GMT">
   
-    <testcase name="Create document" classname="createDocument.spec" time="16.32" assertions="6">
-
-    
-
-    
-
-    
-
-    
-<system-out>[[ATTACHMENT|/Users/chineduofor/Documents/Work/checkpoint 2/Document-Management-System/screenshots/createDocument.spec/Create-document_ERROR_Apr-27-2017-120347-GMT+0100.png]]</system-out>
-    
+    <testcase name="Create document" classname="createDocument.spec" time="8.204" assertions="1">  <failure message="Testing if the URL equals &quot;http://localhost:8080/app/document&quot;.">    at Object.CreateDocument [as Create document] (/Users/chineduofor/Documents/Work/checkpoint 2/Document-Management-System/client/src/test/e2e/createDocument.spec.js:13:14)
+    at _combinedTickCallback (internal/process/next_tick.js:67:7)</failure>
 
     
     </testcase>

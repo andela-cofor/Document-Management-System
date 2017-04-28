@@ -1,4 +1,3 @@
-
 import jwt from 'jsonwebtoken';
 import dotenv from 'dotenv';
 import db from '../../app/models/index';
@@ -28,7 +27,7 @@ const Auth = {
    * @param {Object} res response object
    * @param {Object} next Move to next controller handler
    * @returns {void|Object} response object or void
-   * */
+   */
   validateUserInput(req, res, next) {
     if (req.body.rolesId && req.body.rolesId === 1) {
       return res.status(403)
@@ -100,7 +99,7 @@ const Auth = {
             lastName = req.body.lastName;
             email = req.body.email;
             password = req.body.password;
-            const rolesId = req.body.roleId || 2;
+            const rolesId = req.body.rolesId || 2;
             req.userInput =
             { username, firstName, lastName, rolesId, email, password };
             next();
@@ -238,21 +237,6 @@ const Auth = {
       query.where = Helper.isAdmin(req.tokenDecode.rolesId)
         ? {}
         : { id: req.tokenDecode.userId };
-    }
-    if (`${req.baseUrl}${req.route.path}` === '/documents/search') {
-      if (!req.query.query) {
-        return res.status(400)
-          .send({
-            message: 'Please enter a search query'
-          });
-      }
-      if (Helper.isAdmin(req.tokenDecode.rolesId)) {
-        query.where = Helper.likeSearch(terms);
-      } else {
-        query.where = {
-          $and: [Helper.docAccess(req), Helper.likeSearch(terms)]
-        };
-      }
     }
     if (`${req.baseUrl}${req.route.path}` === '/documents/') {
       if (Helper.isAdmin(req.tokenDecode.rolesId)) {

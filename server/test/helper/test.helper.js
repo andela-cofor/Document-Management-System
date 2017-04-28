@@ -8,6 +8,24 @@ const helper = {
     email: faker.internet.email(),
     password: faker.internet.password(),
   },
+  guestRole1: {
+    id: 3,
+    title: 'guest'
+  },
+  regularUser3: {
+    username: faker.internet.userName(),
+    firstName: faker.name.firstName(),
+    lastName: faker.name.lastName(),
+    email: faker.internet.email(),
+    password: faker.internet.password(),
+  },
+  regularUser2: {
+    username: faker.internet.userName(),
+    firstName: faker.name.firstName(),
+    lastName: faker.name.lastName(),
+    email: faker.internet.email(),
+    password: faker.internet.password()
+  },
   invalidEmailUser: {
     username: faker.internet.userName(),
     firstName: faker.name.firstName(),
@@ -24,8 +42,15 @@ const helper = {
   },
   firstUser: {
     username: faker.internet.userName(),
-    firstname: faker.name.firstName(),
-    lastname: faker.name.lastName(),
+    firstName: faker.name.firstName(),
+    lastName: faker.name.lastName(),
+    email: faker.internet.email(),
+    password: faker.internet.password()
+  },
+  firstUser1: {
+    username: faker.internet.userName(),
+    firstName: faker.name.firstName(),
+    lastName: faker.name.lastName(),
     email: faker.internet.email(),
     password: faker.internet.password()
   },
@@ -36,13 +61,24 @@ const helper = {
     email: faker.internet.email(),
     password: faker.internet.password()
   },
+  secondUser1: {
+    username: faker.internet.userName(),
+    firstName: faker.name.firstName(),
+    lastName: faker.name.lastName(),
+    email: faker.internet.email(),
+    password: faker.internet.password()
+  },
   regularRole: {
     id: 1,
     title: 'regular'
   },
+  regularRole1: {
+    id: 2,
+    title: 'regular'
+  },
   publicDocument: {
-    title: faker.company.catchPhrase(),
-    content: faker.lorem.paragraph(),
+    title: 'bla',
+    content: 'bla',
     access: 'public'
   },
   adminUser: {
@@ -68,8 +104,8 @@ const helper = {
   },
   thirdUser: {
     username: faker.internet.userName(),
-    firstname: faker.name.firstName(),
-    lastname: faker.name.lastName(),
+    firstName: faker.name.firstName(),
+    lastName: faker.name.lastName(),
     email: faker.internet.email(),
     password: faker.internet.password()
   },
@@ -85,6 +121,20 @@ const helper = {
       });
     }
     return users;
+  },
+  privateDocument: {
+    title: faker.company.catchPhrase(),
+    content: faker.lorem.paragraph(),
+    access: 'private'
+  },
+  adminRole: {
+    id: 1,
+    title: 'admin'
+  },
+  roleDocument: {
+    title: faker.company.catchPhrase(),
+    content: faker.lorem.paragraph(),
+    access: 'role'
   },
 };
 export default helper;
