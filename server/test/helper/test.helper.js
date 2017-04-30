@@ -12,6 +12,14 @@ const helper = {
     id: 3,
     title: 'guest'
   },
+  guestRole2: {
+    id: 4,
+    title: 'guest111'
+  },
+  guestRole3: {
+    id: 5,
+    title: 'guest2'
+  },
   regularUser2: {
     username: faker.internet.userName(),
     firstName: faker.name.firstName(),
