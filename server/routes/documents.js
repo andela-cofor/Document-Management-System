@@ -232,6 +232,7 @@ docRouter.route('/documents/:id')
  *           type: integer
  *           format: int64
  */
+docRouter.route('/search/documents')
 /**
    * @swagger
    * /search/documents/?q={document_title}:
@@ -260,12 +261,7 @@ docRouter.route('/documents/:id')
    *           items:
    *             $ref: '#/definitions/SearchDocument'
    */
-// docRouter.get('/search',
-//   Auth.verifyToken,
-//   Auth.getDocByTitle,
-//   Document.getDocByTitle);
-docRouter.get('/search/documents',
-  Auth.verifyToken,
+.get(Auth.verifyToken,
   Auth.validateSearch,
   Document.search);
 

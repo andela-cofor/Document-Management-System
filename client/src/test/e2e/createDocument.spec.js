@@ -22,15 +22,6 @@ module.exports = {
      .click('#access option[value="private"]')
      .assert.elementPresent('Button')
      .click('Button')
-    //  .setValue('.title', faker.lorem.word())
-    //  .setValue('.content', faker.lorem.words())
-    //  .click('#access option[value="private"]')
-    //  .assert.elementPresent('Input[name="title"]')
-    //  .assert.elementPresent('textarea[name="content"]')
-    //  .assert.elementPresent('Input[id="access"]')
-    //  .assert.elementPresent('Button')
-    //  .click('Button')
-    // .click('#access option[value="public"]')
      .end();
   }
 };

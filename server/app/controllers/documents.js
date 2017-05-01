@@ -95,20 +95,6 @@ const Document = {
          })
       );
   },
-  // /**
-  //   * Get document by title
-  //   * Route: GET: /search/documents/?q=
-  //   * @param {Object} req request object
-  //   * @param {Object} res response object
-  //   * @returns {void|Response} response object or void
-  //   */
-  // getDocByTitle(req, res) {
-  //   return res.status(200)
-  //     .send({
-  //       message: 'You have successfully retrived this document',
-  //       document: Helper.getDocument(req.singleDocument)
-  //     });
-  // }
   /**
     * Search document
     * Route: GET: /searchs?query={}

@@ -10,16 +10,16 @@ export function documentsSearched(documentSearchResult) {
 
 export function searchDocuments(queryString) {
   return (dispatch) => {
-    return axios.get(`/search/documents/?q=${queryString}`)
+    return axios.get(`/search/documents/?query=${queryString}`)
       .then((res) => {
-        dispatch(documentsSearched([res.data.document]));
+        dispatch(documentsSearched(res.data.documents.rows));
       });
   };
 }
 
 export function searchUsers(queryString) {
   return (dispatch) => {
-    return axios.get(`/search/users/?q=${queryString}`)
+    return axios.get(`/search/users/?query=${queryString}`)
       .then((res) => {
         dispatch(documentsSearched([res.data.user]));
       });
