@@ -60,11 +60,11 @@ const Helper = {
    */
   likeSearch(terms) {
     const like = {
-      // $or:
-      // [
-      title: { $iLike: { $any: terms } },
-        // { content: { $iLike: { $any: terms } } }
-      // ]
+      $or:
+      [
+        { title: { $iLike: { $any: terms } } },
+        { content: { $iLike: { $any: terms } } }
+      ]
     };
     return like;
   },

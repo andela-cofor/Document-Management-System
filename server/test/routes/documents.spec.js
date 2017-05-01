@@ -359,4 +359,145 @@ describe('DOCUMENT API', () => {
           });
     });
   });
+  describe('DOCUMENT SEARCH PAGINATION', () => {
+    it('should return search results', (done) => {
+      superRequest.get(`/search/documents/?query=
+      ${publicD.content.substr(2, 6)}`)
+        .set({ 'x-access-token': regularToken2 })
+        .end((err, res) => {
+          expect(res.status).to.equal(200);
+          res.body.documents.rows.forEach((doc) => {
+            if (doc.ownerId === regularUser2.id) {
+              expect(doc.access).to.be.oneOf(['public', 'role', 'private']);
+            } else { expect(doc.access).to.be.oneOf(['public', 'role']); }
+          });
+          expect(res.body.message).to.equal('This search was successfull');
+          done();
+        });
+    });
+
+    it('should return all search results to admin',
+    (done) => {
+      superRequest.get(`/search/documents/?query=
+      ${publicD.content.substr(2, 6)}`)
+        .set({ 'x-access-token': adminToken })
+        .end((err, res) => {
+          expect(res.status).to.equal(200);
+          res.body.documents.rows.forEach((doc) => {
+            expect(doc.access).to.be.oneOf(['public', 'role', 'private']);
+          });
+          done();
+        });
+    });
+
+    it('should allow multiple search terms', (done) => {
+      superRequest.get(`/search/documents/?query=
+      ${publicD.content.substr(2, 6)} ${publicD.title.substr(1, 6)}`)
+        .set({ 'x-access-token': regularToken2 })
+        .end((err, res) => {
+          expect(res.status).to.equal(200);
+          res.body.documents.rows.forEach((doc) => {
+            if (doc.ownerId === regularUser2.id) {
+              expect(doc.access).to.be.oneOf(['public', 'role', 'private']);
+            } else { expect(doc.access).to.be.oneOf(['public', 'role']); }
+          });
+          done();
+        });
+    });
+
+    it('should return all documents with pagination', (done) => {
+      superRequest.get(`/search/documents/?query=
+      ${publicD.content.substr(2, 6)} ${publicD.title.substr(1, 6)}`)
+        .set({ 'x-access-token': adminToken })
+        .end((err, res) => {
+          expect(res.status).to.equal(200);
+          expect(res.body.pagination.pageCount).to.be.greaterThan(0);
+          expect(res.body.pagination.page).to.be.greaterThan(0);
+          expect(res.body.pagination.pageSize).to.greaterThan(0);
+          expect(res.body.pagination.totalCount).to.be.greaterThan(0);
+          done();
+        });
+    });
+
+    it('should return "enter search string" when search query is not supplied',
+    (done) => {
+      superRequest.get('/search/documents/')
+        .set({ 'x-access-token': regularToken2 })
+        .end((err, res) => {
+          expect(res.status).to.equal(400);
+          expect(res.body.message).to.equal('Please enter a search query');
+          done();
+        });
+    });
+
+    it('should return error for negative limit', (done) => {
+      superRequest.get(`/search/documents/?query=
+      ${publicD.content.substr(2, 6)}&limit=-2`)
+        .set({ 'x-access-token': regularToken2 })
+        .end((err, res) => {
+          expect(res.status).to.equal(400);
+          expect(res.body.message).to
+            .equal('Only positive number is allowed for limit value');
+          done();
+        });
+    });
+
+    it('should return error for negative offset', (done) => {
+      superRequest.get(`/search/documents/?query=
+      ${publicD.content.substr(2, 6)}&limit=2&offset=-2`)
+        .set({ 'x-access-token': regularToken2 })
+        .end((err, res) => {
+          expect(res.status).to.equal(400);
+          expect(res.body.message).to
+            .equal('Only positive number is allowed for offset value');
+          done();
+        });
+    });
+
+    it('should return error when limit entered is string', (done) => {
+      superRequest.get(`/search/documents/?query=
+      ${publicD.content.substr(2, 6)}&limit=aaa`)
+        .set({ 'x-access-token': regularToken2 })
+        .end((err, res) => {
+          expect(res.status).to.equal(400);
+          expect(res.body.message).to
+            .equal('Only positive number is allowed for limit value');
+          done();
+        });
+    });
+
+    it('should return documents in order of their respective published date',
+    (done) => {
+      superRequest.get(`/search/documents/?query=
+      ${publicD.content.substr(2, 6)}&publishedDate=DESC`)
+        .set({ 'x-access-token': regularToken2 })
+        .end((err, res) => {
+          for (let i = 0; i < res.body.documents.rows.length - 1; i += 1) {
+            const flag = compareDates(
+              res.body.documents.rows[i].createdAt,
+              res.body.documents.rows[1 + i].createdAt
+            );
+            expect(flag).to.equal(false);
+          }
+          done();
+        });
+    });
+
+    it('should return documents in ascending order of published date',
+    (done) => {
+      superRequest.get(`/search/documents/?query=
+      ${publicD.content.substr(2, 6)}&publishedDate=ASC`)
+        .set({ 'x-access-token': regularToken2 })
+        .end((err, res) => {
+          for (let i = 0; i < res.body.documents.rows.length - 1; i += 1) {
+            const flag = compareDates(
+              res.body.documents.rows[i].createdAt,
+              res.body.documents.rows[1 + i].createdAt
+            );
+            expect(flag).to.equal(true);
+          }
+          done();
+        });
+    });
+  });
 });

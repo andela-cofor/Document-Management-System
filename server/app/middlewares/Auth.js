@@ -227,19 +227,34 @@ const Auth = {
       query.where = {
         $or: [
           { username: { $iLike: { $any: terms } } },
-          { firstName: { $iLike: { $any: terms } } },
-          { lastName: { $iLike: { $any: terms } } },
+          { firstname: { $iLike: { $any: terms } } },
+          { lastname: { $iLike: { $any: terms } } },
           { email: { $iLike: { $any: terms } } }
         ]
       };
     }
     if (`${req.baseUrl}${req.route.path}` === '/users/') {
-      query.where = Helper.isAdmin(req.tokenDecode.rolesId)
+      query.where = Helper.isAdmin(req.tokenDecode.roleId)
         ? {}
         : { id: req.tokenDecode.userId };
     }
+    if (`${req.baseUrl}${req.route.path}` === '/search/documents') {
+      if (!req.query.query) {
+        return res.status(400)
+          .send({
+            message: 'Please enter a search query'
+          });
+      }
+      if (Helper.isAdmin(req.tokenDecode.roleId)) {
+        query.where = Helper.likeSearch(terms);
+      } else {
+        query.where = {
+          $and: [Helper.docAccess(req), Helper.likeSearch(terms)]
+        };
+      }
+    }
     if (`${req.baseUrl}${req.route.path}` === '/documents/') {
-      if (Helper.isAdmin(req.tokenDecode.rolesId)) {
+      if (Helper.isAdmin(req.tokenDecode.roleId)) {
         query.where = {};
       } else {
         query.where = Helper.docAccess(req);

@@ -1,27 +1,26 @@
 <?xml version="1.0" encoding="UTF-8" ?>
-<testsuites errors="3"
-            failures="1"
+<testsuites errors="0"
+            failures="0"
             tests="2">
 
   <testsuite name="login.spec"
-    errors="3" failures="1" hostname="" id="" package="login.spec" skipped="1"
-    tests="2" time="3.216" timestamp="Fri, 28 Apr 2017 10:26:27 GMT">
+    errors="0" failures="0" hostname="" id="" package="login.spec" skipped="0"
+    tests="2" time="10.84" timestamp="Sun, 30 Apr 2017 16:41:24 GMT">
   
-    <testcase name="Login Users" classname="login.spec" time="3.216" assertions="2">
-<system-out>[[ATTACHMENT|/Users/chineduofor/Documents/Work/checkpoint 2/Document-Management-System/screenshots/login.spec/Login-Users_ERROR_Apr-28-2017-112628-GMT+0100.png]][[ATTACHMENT|/Users/chineduofor/Documents/Work/checkpoint 2/Document-Management-System/screenshots/login.spec/Login-Users_ERROR_Apr-28-2017-112628-GMT+0100.png]][[ATTACHMENT|/Users/chineduofor/Documents/Work/checkpoint 2/Document-Management-System/screenshots/login.spec/Login-Users_ERROR_Apr-28-2017-112629-GMT+0100.png]]</system-out>
-      <failure message="Testing if the URL equals &quot;http://localhost:8080/app/document&quot;.">    at Object.LoginUsers [as Login Users] (/Users/chineduofor/Documents/Work/checkpoint 2/Document-Management-System/client/src/test/e2e/login.spec.js:13:15)
-    at _combinedTickCallback (internal/process/next_tick.js:67:7)</failure>
+    <testcase name="Login Users" classname="login.spec" time="5.241" assertions="2">
+
+    
 
     
     </testcase>
   
-  
+    <testcase name="Invalid user" classname="login.spec" time="5.597" assertions="2">
+
     
-    <testcase
-      name="Invalid user" classname="login.spec">
-      <skipped />
+
+    
     </testcase>
-    
+  
   
   </testsuite>
 </testsuites>

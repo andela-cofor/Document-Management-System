@@ -8,18 +8,6 @@ const helper = {
     email: faker.internet.email(),
     password: faker.internet.password(),
   },
-  guestRole1: {
-    id: 3,
-    title: 'guest'
-  },
-  guestRole2: {
-    id: 4,
-    title: 'guest111'
-  },
-  guestRole3: {
-    id: 5,
-    title: 'guest2'
-  },
   regularUser2: {
     username: faker.internet.userName(),
     firstName: faker.name.firstName(),
@@ -40,6 +28,32 @@ const helper = {
     lastName: faker.name.lastName(),
     email: faker.internet.email(),
     password: faker.internet.password(),
+  },
+  regularUser5: {
+    username: faker.internet.userName(),
+    firstName: faker.name.firstName(),
+    lastName: faker.name.lastName(),
+    email: faker.internet.email(),
+    password: faker.internet.password(),
+  },
+  regularUser6: {
+    username: faker.internet.userName(),
+    firstName: faker.name.firstName(),
+    lastName: faker.name.lastName(),
+    email: faker.internet.email(),
+    password: faker.internet.password(),
+  },
+  guestRole1: {
+    id: 3,
+    title: 'guest'
+  },
+  guestRole2: {
+    id: 4,
+    title: 'guest111'
+  },
+  guestRole3: {
+    id: 5,
+    title: 'guest2'
   },
   sampleRole: {
     id: 6,
@@ -113,6 +127,27 @@ const helper = {
     access: 'public'
   },
   adminUser: {
+    username: faker.internet.userName(),
+    firstName: faker.name.firstName(),
+    lastName: faker.name.lastName(),
+    email: faker.internet.email(),
+    password: faker.internet.password()
+  },
+  adminUser1: {
+    username: faker.internet.userName(),
+    firstName: faker.name.firstName(),
+    lastName: faker.name.lastName(),
+    email: faker.internet.email(),
+    password: faker.internet.password()
+  },
+  adminUser2: {
+    username: faker.internet.userName(),
+    firstName: faker.name.firstName(),
+    lastName: faker.name.lastName(),
+    email: faker.internet.email(),
+    password: faker.internet.password()
+  },
+  adminUser6: {
     username: faker.internet.userName(),
     firstName: faker.name.firstName(),
     lastName: faker.name.lastName(),

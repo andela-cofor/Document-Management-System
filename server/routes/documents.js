@@ -260,10 +260,14 @@ docRouter.route('/documents/:id')
    *           items:
    *             $ref: '#/definitions/SearchDocument'
    */
+// docRouter.get('/search',
+//   Auth.verifyToken,
+//   Auth.getDocByTitle,
+//   Document.getDocByTitle);
 docRouter.get('/search/documents',
   Auth.verifyToken,
-  Auth.getDocByTitle,
-  Document.getDocByTitle);
+  Auth.validateSearch,
+  Document.search);
 
 
 export default docRouter;
