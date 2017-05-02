@@ -14,7 +14,9 @@
   width: 30%;
   margin: 70px auto 0;
   box-shadow: 2px 2px 5px 1px rgba(0, 0, 0, 0.2);
-  padding-bottom: 40px;
+  /*padding-bottom: 40px;*/
+  /*padding: top right bottom left;*/
+  padding: 5px 10px 20px 10px;
   border-radius: 3px;
 }
 .SignupForm h1 {

@@ -105,12 +105,17 @@ class ProfilePageForm extends Component {
             <Input
               s={6}
               name="password"
+              type="password"
               value={this.state.password}
               onChange={(event) => this.onChange(event)}
               required
             />
           </Row>
-          <button className="" waves="light" type="submit">UPDATE</button>
+          <Row>
+            <button className="btn-update" waves="light" type="submit">UPDATE</button>
+          </Row>
+          <Row>
+          </Row>
         </form>
       </div>
     );

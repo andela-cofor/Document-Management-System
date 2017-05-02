@@ -70,7 +70,7 @@ class DocumentCreateForm extends Component {
                 <option className="optionBtn" name="Private"value="private">Private</option>
                 <option className="optionBtn" name="Role" value="role">Role</option>
               </Input>
-              <button className="btn waves-effect waves-light">Save</button>
+              <button className="btn waves-effect waves-light right">Save</button>
             </Row>
           </div>
         </form>
