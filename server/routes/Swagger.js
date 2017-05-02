@@ -17,7 +17,7 @@ const options = {
   // import swaggerDefinitions
   swaggerDefinition,
   // path to the API docs
-  apis: ['./server/routes/roles.js', './server/routes/documents.js', './server/routes/users.js'],
+  apis: ['./server/routes/Routes', './server/routes/Documents.js', './server/routes/Users.js'],
 };
 
 // initialize swagger-jsdoc
