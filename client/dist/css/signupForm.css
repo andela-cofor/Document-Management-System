@@ -9,9 +9,10 @@
   box-shadow: 0 2px 5px 1px rgba(0, 0, 0, 0.2);
 }
 
+
 .SignupForm {
   box-sizing: border-box;
-  width: 30%;
+  width: 50%;
   margin: 70px auto 0;
   box-shadow: 2px 2px 5px 1px rgba(0, 0, 0, 0.2);
   /*padding-bottom: 40px;*/

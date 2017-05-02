@@ -31,11 +31,11 @@ class SignupForm extends Component {
   render() {
     return (
       <div>
-        <form onSubmit={this.onSubmit} className="SignupForm">
+        <form className="sForm" onSubmit={this.onSubmit} className="SignupForm">
           <div className="form-control">
             <h1 className="signupHeader">Sign Up</h1>
+            <label className="active" htmlFor="first_name">Username</label>
             <input
-              placeholder="Username"
               value={this.state.username}
               onChange={this.onChange}
               type="text"
@@ -45,8 +45,8 @@ class SignupForm extends Component {
             />
           </div>
           <div className="form-control">
+            <label className="active" htmlFor="first_name">Firstname</label>
             <input
-              placeholder="Firstname"
               value={this.state.firstName}
               onChange={this.onChange}
               type="text"
@@ -56,8 +56,8 @@ class SignupForm extends Component {
             />
           </div>
           <div className="form-control">
+            <label className="active" htmlFor="first_name">Lastname</label>
             <input
-              placeholder="Lastname"
               value={this.state.lastName}
               onChange={this.onChange}
               type="text"
@@ -67,8 +67,8 @@ class SignupForm extends Component {
             />
           </div>
           <div className="form-control">
+            <label className="active" htmlFor="first_name">Email</label>
             <input
-              placeholder="Email"
               value={this.state.email}
               onChange={this.onChange}
               type="email"
@@ -77,9 +77,9 @@ class SignupForm extends Component {
               required
             />
           </div>
+          <label className="active" htmlFor="first_name">Password</label>
           <div className="form-control">
             <input
-              placeholder="Password"
               value={this.state.password}
               onChange={this.onChange}
               type="password"

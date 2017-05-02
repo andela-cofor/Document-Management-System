@@ -33,8 +33,8 @@ class LoginForm extends Component {
         <form onSubmit={this.onSubmit} className="loginForm">
           <div className="form-control">
             <h1 className="loginHeader">Login</h1>
+            <label className="active" htmlFor="first_name">Email:</label>
             <input
-              placeholder="Email"
               value={this.state.email}
               onChange={this.onChange}
               type="email"
@@ -44,8 +44,8 @@ class LoginForm extends Component {
             />
           </div>
           <div className="form-control">
+            <label className="active" htmlFor="first_name">Password</label>
             <input
-              placeholder="Password"
               value={this.state.password}
               onChange={this.onChange}
               type="password"

@@ -126,9 +126,10 @@ button:focus {
 }
 
 .pro-form {
-    width: 1000px;
+    padding: 20px 10px 0px 20px;
+    width: 800px;
     box-shadow: 10px 10px 30px #333;
-    margin: 5% 12%;
+    margin: 5% 20%;
 
 }
 
@@ -170,9 +171,9 @@ button:focus {
   cursor: pointer;
   border-radius: 3px;
   padding: 6px;
-  width: 200px;
+  width: 100px;
   color: white;
-  margin-left: 75%;
+  margin: 20% 2%;
   box-shadow: 0 3px 6px 0 rgba(0, 0, 0, 0.2);
 }
 .btn-update:hover {
