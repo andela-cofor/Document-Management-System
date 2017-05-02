@@ -105,6 +105,9 @@ It should be noted that the endpoints for roles here are only available to the A
 - Postgresql
 - React/Redux
 - Sequelize ORM.
+- ReactJS with the Redux
+- Material Design CSS Framework
+- SASS/SCSS.
 
 #### Contributing
 ---
