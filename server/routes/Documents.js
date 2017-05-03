@@ -3,8 +3,6 @@ import Document from './../app/controllers/Documents';
 import Auth from '../app/middlewares/Auth';
 
 const docRouter = express.Router();
-
-
 /**
  * @swagger
  * definitions:

@@ -1,6 +1,6 @@
 import expect from 'expect';
 import React from 'react';
-import { mount, shallow } from 'enzyme';
+import { mount } from 'enzyme';
 import AllDocumentsCard from '../../components/documents/AllDocumentsCard.component';
 
 function setup() {

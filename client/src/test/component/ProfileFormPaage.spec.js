@@ -19,7 +19,6 @@ describe('ProfilePageForm Test', () => {
   it('renders form and h5', () => {
     const wrapper = setup(false);
     expect(wrapper.find('form').length).toBe(1);
-    // expect(wrapper.find('h5').text()).toEqual('Create a Document');
   });
 
   it('UPDATE button is labeled "UPDATE" ', () => {

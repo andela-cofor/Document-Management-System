@@ -1,4 +1,3 @@
-// import config from '../../../../nightwatch.config';
 import config from './config';
 
 module.exports = {

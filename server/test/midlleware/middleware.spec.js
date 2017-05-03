@@ -23,8 +23,6 @@ describe('MIDDLEWARE UNIT TEST', () => {
   before((done) => {
     db.Roles.bulkCreate([{ title: 'admin', id: 1 }, { title: 'regular', id: 2 }])
       .then((roles) => {
-          console.log('admmmmmmmm', helper.adminUser6);
-          console.log('rege', helper.regularUser6);
         helper.adminUser6.rolesId = roles[0].id;
         helper.regularUser6.rolesId = roles[1].id;
         db.Users.create(helper.adminUser6)
@@ -35,7 +33,6 @@ describe('MIDDLEWARE UNIT TEST', () => {
                 adminToken = res.body.token;
                 db.Users.create(helper.regularUser6)
                   .then((reUser) => {
-                      console.log('yamhere', reUser.roleId)
                     regularUser = reUser;
                     superRequest.post('/users/login')
                       .send(helper.regularUser6)
@@ -90,45 +87,6 @@ describe('MIDDLEWARE UNIT TEST', () => {
       });
     });
   });
-
-//   describe('Admin', () => {
-//     it('should not continue when requester is not an admin user', (done) => {
-//       const response = responseEvent();
-//       request = httpMocks.createRequest({
-//         method: 'GET',
-//         url: '/roles',
-//         headers: { 'x-access-token': regularToken },
-//         tokenDecode: { roleId: regularUser.rolesId }
-//       });
-//       const middlewareStub = {
-//         callback: () => { }
-//       };
-//       sinon.spy(middlewareStub, 'callback');
-//       Auth.hasAdminPermission(request, response, middlewareStub.callback);
-//       response.on('end', () => {
-//         expect(response._getData().message).to
-//           .equal('You are not permitted to perform this action');
-//         done();
-//       });
-//     });
-
-//     // it('should continue for admin user', (done) => {
-//     //   const response = responseEvent();
-//     //   request = httpMocks.createRequest({
-//     //     method: 'GET',
-//     //     url: '/roles',
-//     //     headers: { 'x-access-token': adminToken },
-//     //     tokenDecode: { roleId: helper.adminUser.roleId }
-//     //   });
-//     //   const middlewareStub = {
-//     //     callback: () => { }
-//     //   };
-//     //   sinon.spy(middlewareStub, 'callback');
-//     //   Auth.hasAdminPermission(request, response, middlewareStub.callback);
-//     //   expect(middlewareStub.callback).to.have.been.called;
-//     //   done();
-//     // });
-//   });
 
   describe('validateUserInput', () => {
     it('should not continue when email is null', () => {
@@ -215,28 +173,6 @@ describe('MIDDLEWARE UNIT TEST', () => {
   });
 
   describe('validateUserUpdate', () => {
-    // it('should not continue when user want to modify admin profile', () => {
-    //   const response = responseEvent();
-    //   request = httpMocks.createRequest({
-    //     method: 'PUT',
-    //     url: '/users/1',
-    //     params: {
-    //       id: '1'
-    //     },
-    //     body: {
-    //       email: 'new@mail.com',
-    //     },
-    //   });
-    //   const middlewareStub = {
-    //     callback: () => { }
-    //   };
-    //   sinon.spy(middlewareStub, 'callback');
-    //   response.on('end', () => {
-    //     expect(response._getData().message).to
-    //       .equal('You are not permitted to modify the default admin user');
-    //   });
-    //   Auth.validateUserUpdate(request, response, middlewareStub.callback);
-    // });
 
     it('should continue when user is the owner', (done) => {
       const response = responseEvent();

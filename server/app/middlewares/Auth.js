@@ -217,7 +217,7 @@ const Auth = {
     query.offset = offset;
     query.order = [['createdAt', order]];
 
-    if (`${req.baseUrl}${req.route.path}` === '/users/search') {
+    if (`${req.baseUrl}${req.route.path}` === '/search/users') {
       if (!req.query.query) {
         return res.status(400)
           .send({

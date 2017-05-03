@@ -17,7 +17,7 @@ const compareDates = (firstDate, secondDate) =>
 describe('DOCUMENT API', () => {
   let adminToken, regularToken, regularToken2;
   let regularUser, regularUser2;
-  let createdDoc, roleDocument, publicDocument, privateDocument;
+  let createdDoc, publicDocument, privateDocument;
   let document, updateDoc;
 
   before((done) => {
@@ -25,7 +25,7 @@ describe('DOCUMENT API', () => {
       .then((roles) => {
         helper.adminUser.rolesId = roles[0].id;
         db.Users.create(helper.adminUser)
-          .then((user) => {
+          .then(() => {
             superRequest.post('/users/login')
               .send(helper.adminUser)
               .end((err, res1) => {

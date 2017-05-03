@@ -26,8 +26,6 @@ describe('DocumentForm Test', () => {
   it('should render self', () => {
     const wrapper = setup();
     expect(wrapper.length).toEqual(1);
-    // expect(wrapper.find('Input').length).toEqual(4);
-    // console.log(wrapper.find('input').length)
   });
 
   it('should take props', () => {

@@ -54,9 +54,6 @@ export function saveDocument(data) {
       .catch(error => {
         throw(error);
       });
-      // .then((res) => {
-      //   console.log(res)
-      // })
   };
 }
 
@@ -65,9 +62,6 @@ export function fetchDocuments() {
     return axios.get('/documents')
       .then(res => res.data)
       .then(data => dispatch(setDocuments(data.documents.rows)));
-      // .then((res) => {
-      //   console.log(res);
-      // })
   };
 }
 
