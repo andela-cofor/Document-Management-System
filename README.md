@@ -50,7 +50,7 @@ The frontend was built with the [react](https://facebook.github.io/react/) and [
 ---
 
 - Clone the project repository.
-- Run git clone https://github.com/andela-hchukwu/Document-Management-System.git.
+- Run git clone https://github.com/andela-cofor/Document-Management-System.git.
 - Change directory into the Document-Management-System directory.
 - Run npm install to install the dependencies in the package.json file.
 - Use Postman or any API testing tool of your choice to access the endpoints.
@@ -64,36 +64,6 @@ The frontend was built with the [react](https://facebook.github.io/react/) and [
 ## Endpoints
 Here's the collection of routes. They can be checked out on Postman
 [![Run in Postman](https://run.pstmn.io/button.svg)](https://app.getpostman.com/run-collection/89b63da4a2a0c98485e7)
-
-#### Users
-EndPoint                      |   Functionality
-------------------------------|------------------------
-POST /users/login         |   Logs in a user.
-POST /users/logout        |   Logs out a user.
-POST /users/              |   Creates a new user.
-GET /users/               |   Gets all users (available to only the Admin).
-GET /users/:id           |   Finds user by id.
-PUT /users/:id           |   Updates a user's attributes based on the id specified (available to only the SuperAdmin and Admin)
-DELETE /users/:id        |   Deletes user (available only to the Admin)
-GET /users/:id/documents   | Gets all documents for a particular user
-
-#### Documents
-EndPoint                      |   Functionality
-------------------------------|------------------------
-POST /documents/          |   Creates a new document instance.
-GET /documents/           |   Gets all documents.
-GET /documents/:id       |   Find document by id.
-PUT /documents/:id       |   Updates a document attributes.
-DELETE /documents/:id    |   Delete document.
-GET search/documents/?q=${query} | Get all documents with title containing the search query
-
-#### Roles
-EndPoint                      |   Functionality
-------------------------------|------------------------
-GET /roles/               |   Get all Roles.
-POST /roles/               |   Create a Role.
-PUT /roles/:id               |   Edit a Role.
-DELETE /roles/:id               |   Delete a Role.
 
 It should be noted that the endpoints for roles here are only available to the Admin.
 
@@ -113,7 +83,7 @@ It should be noted that the endpoints for roles here are only available to the A
 ---
 
 1. Fork this repositry to your account.
-2. Clone your repositry: git clone https://github.com/andela-hchukwu/Document-Management-System.git
+2. Clone your repositry: git clone https://github.com/andela-cofor/Document-Management-System.git
 3. Create your feature branch: git checkout -b new-feature
 4. Commit your changes: git commit -m "did something"
 5. Push to the remote branch: git push origin new-feature
