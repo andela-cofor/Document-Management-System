@@ -74,7 +74,6 @@ class SignupForm extends Component {
               type="email"
               name="email"
               className="form-control"
-              required
             />
           </div>
           <label className="active" htmlFor="first_name">Password</label>
