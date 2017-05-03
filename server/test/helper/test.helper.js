@@ -123,7 +123,7 @@ const helper = {
   },
   publicDocument: {
     title: 'bla',
-    content: 'bla',
+    content: 'blabla',
     access: 'public'
   },
   adminUser: {
