@@ -358,6 +358,7 @@ describe('DOCUMENT API', () => {
           });
     });
   });
+
   describe('DOCUMENT SEARCH PAGINATION', () => {
     it('should return search results', (done) => {
       superRequest.get(`/search/documents/?query=

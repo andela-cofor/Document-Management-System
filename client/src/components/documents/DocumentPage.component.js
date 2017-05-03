@@ -13,7 +13,7 @@ class DocumentsPage extends React.Component {
     this.handleSearch = this.handleSearch.bind(this);
   }
 
-  componentDidMount(this.props.uI) {
+  componentDidMount() {
     this.props.fetchDocument(this.props.uI);
   }
 
