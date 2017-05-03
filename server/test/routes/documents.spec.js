@@ -228,7 +228,6 @@ describe('DOCUMENT API', () => {
       });
   });
 
-  //   describe('GET document /documents/:id', () => {
   describe('GET document with PRIVATE access', () => {
     before((done) => {
       superRequest.post('/documents')
