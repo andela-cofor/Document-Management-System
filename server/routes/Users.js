@@ -6,7 +6,7 @@ import Auth from '../app/middlewares/Auth';
 const userRouter = express.Router();
 
 // Displays the index page
-userRouter.route('/')
+userRouter.route('/docs')
   .get((req, res) => {
     res.status(200).sendFile(path.join(__dirname, '../public', 'index.html'));
   });

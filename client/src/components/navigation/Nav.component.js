@@ -35,10 +35,7 @@ class Navbar extends Component {
               }
             </li>
             <li>
-              {(this.props.roles === 1)
-                ? <a href="/app/all/document" className="">All Documents</a>
-                : <a href="/app/home" />
-              }
+              <a href="/app/all/document" className="">All Documents</a>
             </li>
             <li className={this.props.isHomeActive}>
               {isAuthenticated

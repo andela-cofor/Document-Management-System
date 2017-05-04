@@ -1,7 +1,10 @@
+import configureMockStore from 'redux-mock-store';
 import expect from 'expect';
 import React from 'react';
-import { mount, shallow } from 'enzyme';
-import DocumentCreateForm from '../../components/documents/DocumentCreateForm.component';
+import { mount } from 'enzyme';
+import LoginForm from '../../../components/login/LoginForm.component';
+
+const store = configureMockStore()({});
 
 function setup(saving) {
   const props = {
@@ -9,28 +12,29 @@ function setup(saving) {
     saving,
     errors: {},
     onSave: () => {},
-    onChange: () => {}
+    onChange: () => {},
+    store
   };
 
-  return shallow(<DocumentCreateForm {...props} />);
+  return mount(<LoginForm {...props} />);
 }
 
-describe('DocumentForm Test', () => {
+describe('ProfilePage Test', () => {
   it('renders form and h5', () => {
     const wrapper = setup(false);
     expect(wrapper.find('form').length).toBe(1);
-    expect(wrapper.find('h5').text()).toEqual('Create a Document');
+    expect(wrapper.find('h1').text()).toEqual('Login');
   });
 
-  it('save button is labeled "Save" ', () => {
+  it('Login button is labeled "Login" ', () => {
     const wrapper = setup(true);
-    expect(wrapper.find('button').text()).toEqual('Save');
+    expect(wrapper.find('button').text()).toEqual('Login');
   });
 
   it('should render self', () => {
     const wrapper = setup();
     expect(wrapper.length).toEqual(1);
-    expect(wrapper.find('Input').length).toEqual(3);
+    expect(wrapper.find('input').length).toEqual(2);
   });
 
   it('should take props', () => {

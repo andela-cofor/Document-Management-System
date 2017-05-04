@@ -233,7 +233,7 @@ const Auth = {
         ]
       };
     }
-    if (`${req.baseUrl}${req.route.path}` === '/users/') {
+    if (`${req.baseUrl}${req.route.path}` === '/users') {
       query.where = Helper.isAdmin(req.tokenDecode.roleId)
         ? {}
         : { id: req.tokenDecode.userId };
@@ -253,7 +253,7 @@ const Auth = {
         };
       }
     }
-    if (`${req.baseUrl}${req.route.path}` === '/documents/') {
+    if (`${req.baseUrl}${req.route.path}` === '/documents') {
       if (Helper.isAdmin(req.tokenDecode.roleId)) {
         query.where = {};
       } else {

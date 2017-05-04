@@ -1,9 +1,9 @@
 import React from 'react';
-import { mount , shallow } from 'enzyme';
+import { shallow } from 'enzyme';
 import expect from 'expect';
-import index from '../../components/homepage/index.component';
-import NavBar from '../../components/navigation/Nav.component';
-import FlashMessagesList from '../../components/flash/FlashMessagesList';
+import index from '../../../components/homepage/index.component';
+import NavBar from '../../../components/navigation/Nav.component';
+import FlashMessagesList from '../../../components/flash/FlashMessagesList';
 
 describe(' Test for index Component', () => {
   it('renders without crashing', () => {

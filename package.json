@@ -6,7 +6,7 @@
   "main": "index.js",
   "scripts": {
     "test": "NODE_ENV=test istanbul cover _mocha -- -R spec server/test/**/*.spec.js client/src/test/reducers/**/*.spec.js --compilers js:babel-core/register",
-    "client:test": "./node_modules/mocha/bin/_mocha --require ignore-styles -w --reporter progress .setup.js client/src/test/**/*.spec.js",
+    "client:test": "./node_modules/mocha/bin/_mocha --require ignore-styles -w --reporter progress .setup.js client/src/test/**/**/*.spec.js",
     "start": "babel-watch server.js",
     "migrate:test": "NODE_ENV=test sequelize db:migrate",
     "migrate:prod": "NODE_ENV=production sequelize db:migrate",
@@ -75,6 +75,7 @@
     "react-tinymce": "^0.5.1",
     "react-user-tour": "^2.5.0",
     "redux": "^3.6.0",
+    "redux-mock-store": "^1.2.3",
     "redux-thunk": "^2.2.0",
     "selenium-download": "^2.0.10",
     "sequelize": "^3.30.3",

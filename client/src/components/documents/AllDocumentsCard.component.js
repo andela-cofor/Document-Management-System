@@ -59,8 +59,7 @@ class AllDocumentsCard extends Component {
             </div>
             <p><span><strong>Content:</strong> {this.props.document.content}</span></p>
           </div>
-          <div className="card-action">
-            
+          <div className="card-action">  
           </div>
         </div>
       </div>

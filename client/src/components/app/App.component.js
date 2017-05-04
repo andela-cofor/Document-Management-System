@@ -21,7 +21,6 @@ class App extends Component {
     return (
       <BrowserRouter history={browserHistory}>
         <div>
-          {/*<UserTour />*/}
           <Route path="/app/" component={Index} />
           <Route path="/app/login" component={LoginPage} />
           <Route path="/app/signup" component={SignupPage} />
