@@ -9,8 +9,11 @@ import Create from '../documents/DocumentCreatePage.component';
 import ProfilePage from '../ProfilePage/ProfilePage.component';
 import UsersPage from '../users/UsersPage.component';
 import AllDocumentsPage from '../documents/AllDocumentsPage.component';
-// import UserTour from '../../components/tour/Tour.component';
 
+/**
+ * @class App
+ * @extends {Component}
+ */
 class App extends Component {
   /**
    * renders the app component
