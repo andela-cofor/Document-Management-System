@@ -2,9 +2,15 @@ import React, { Component } from 'react';
 import { Row, Input, Button } from 'react-materialize';
 import { Link } from 'react-router-dom';
 
+
+/**
+ * @class DocumentCreateForm
+ * @extends {Component}
+ */
 class DocumentCreateForm extends Component {
   /**
    * renders the CreateDocument component
+   * @param {props} props
    * @returns {void}
    * @memberOf CreateDocument
    */
@@ -19,17 +25,34 @@ class DocumentCreateForm extends Component {
     this.onSubmit = this.onSubmit.bind(this);
   }
 
+
+  /**
+   * @param {any} event
+   * @memberof DocumentCreateForm
+   * @returns {void}
+   */
   onChange(event) {
     this.setState({ [event.target.name]: event.target.value });
   }
 
+
+  /**
+   * @param {any} event
+   * @memberof DocumentCreateForm
+   * @returns {void}
+   */
   onSubmit(event) {
     event.preventDefault();
     this.props.saveDocument(this.state).then(() => {
       this.context.router.history.push('/app/document');
-    })
+    });
   }
 
+
+  /**
+   * @returns {html} form
+   * @memberof DocumentCreateForm
+   */
   render() {
     return (
       <div className="doc-form">

@@ -2,6 +2,11 @@ import React, { Component } from 'react';
 import { Button, Row, Input, Pagination} from 'react-materialize';
 import { Link } from 'react-router-dom';
 
+
+/**
+ * @class ProfilePageForm
+ * @extends {Component}
+ */
 class ProfilePageForm extends Component {
   componentDidMount() {
     this.props.getUser(this.props.user).then((res) => {
@@ -32,15 +37,37 @@ class ProfilePageForm extends Component {
     this.onSubmit = this.onSubmit.bind(this);
   }
 
+
+  /**
+   * @param {object} event
+   * @memberof ProfilePageForm
+   * @returns {void}
+   */
   onChange(event) {
     this.setState({ [event.target.name]: event.target.value });
   }
 
+  /**
+   * @param {any} event
+   * @memberof ProfilePageForm
+   * @returns {object} response from server
+   */
   onSubmit(event) {
     event.preventDefault();
     this.props.updateUser(this.state, this.props.user)
+    .then((res)=> {
+      Materialize.toast(res.data.message, 4000, 'rounded');
+    })
+    .catch((err) => {
+      Materialize.toast(err.response.data.message, 4000, 'rounded');
+    });
   }
 
+
+  /**
+   * @returns {html} form
+   * @memberof ProfilePageForm
+   */
   render() {
     return (
       <div className="pro-form">

@@ -2,6 +2,10 @@ import React, { Component } from 'react';
 import {Modal, Button, Row, Input, Pagination} from 'react-materialize';
 import { Link } from 'react-router-dom';
 
+/**
+ * @class AllDocumentsCard
+ * @extends {Component}
+ */
 class AllDocumentsCard extends Component {
   constructor (props) {
     super(props);
@@ -16,10 +20,22 @@ class AllDocumentsCard extends Component {
     };
   }
 
+
+  /**
+   * @param {any} event 
+   * @memberof AllDocumentsCard
+   * @returns {void}
+   */
   onChange(event) {
     this.setState({ [event.target.name]: event.target.value });
   }
 
+
+  /**
+   * @param {any} event 
+   * @memberof AllDocumentsCard
+   * @returns {object} containing user data
+   */
   onSubmit(event) {
     event.preventDefault();
     const id = event.target.id.value;
@@ -34,6 +50,10 @@ class AllDocumentsCard extends Component {
     });
   }
 
+  /**
+   * @returns {object} Crards
+   * @memberof AllDocumentsCard
+   */
   render() {
     return (
       <div className="col s4">

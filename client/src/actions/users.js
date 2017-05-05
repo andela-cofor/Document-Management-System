@@ -1,6 +1,11 @@
 import axios from 'axios';
 import { SET_USERS, USER_DELETED } from './types';
 
+/**
+ * @export
+ * @param {any} users
+ * @returns {object} response
+ */
 export function setUsers(users) {
   return {
     type: SET_USERS,
@@ -8,6 +13,10 @@ export function setUsers(users) {
   };
 }
 
+/**
+ * @export
+ * @returns {object} response
+ */
 export function fetchUsers() {
   return (dispatch) => {
     return axios.get('/users')
@@ -18,6 +27,11 @@ export function fetchUsers() {
   };
 }
 
+/**
+ * @export
+ * @param {any} userId
+ * @returns {object} response
+ */
 export function userDeleted(userId) {
   return {
     type: USER_DELETED,
@@ -25,6 +39,11 @@ export function userDeleted(userId) {
   };
 }
 
+/**
+ * @export
+ * @param {any} id
+ * @returns {object} response
+ */
 export function deleteUser(id) {
   return (dispatch) => {
     return axios.delete(`/users/${id}`)

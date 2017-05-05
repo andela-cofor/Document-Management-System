@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { logout } from '../../actions/authActions';
-// import UserTour from '../../components/tour/Tour.component';
 
 class Navbar extends Component {
   /**
@@ -15,6 +14,10 @@ class Navbar extends Component {
     this.context.router.history.push('/app/login');
   }
 
+  /**
+   * @returns {object} cards
+   * @memberof Navbar
+   */
   render() {
     const { isAuthenticated } = this.props.auth;
     return (

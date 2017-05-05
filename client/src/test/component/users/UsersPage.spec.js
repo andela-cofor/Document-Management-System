@@ -6,6 +6,10 @@ import UsersCard from '../../../components/users/UsersCard.component';
 
 const store = configureMockStore()({});
 
+/**
+ * @param {any} saving
+ * @returns {object} test
+ */
 function setup(saving) {
   const props = {
     users: { firstName: '', lastName: '' },

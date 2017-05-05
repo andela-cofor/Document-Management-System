@@ -3,6 +3,11 @@ import React, { Component } from 'react';
 import LoginForm from './LoginForm.component';
 import { userLoginRequest } from '../../actions/authActions';
 
+
+/**
+ * @class LoginPage
+ * @extends {Component}
+ */
 class LoginPage extends Component {
   /**
    * renders the Nav component

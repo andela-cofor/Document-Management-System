@@ -1,6 +1,11 @@
 import React from 'react';
 import DocumentCard from './DocumentCard.component';
 
+/**
+ * @export
+ * @param {any} documents, deleteDocument, updateDocument
+ * @returns {object} DocumentCard
+ */
 export default function DocumentsList({ documents, deleteDocument, updateDocument }) {
   const emptyMessage = (
     <p className="qBox1"><strong>There are no documents yet in your collection.</strong></p>

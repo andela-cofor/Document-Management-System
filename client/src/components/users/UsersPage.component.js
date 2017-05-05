@@ -5,16 +5,30 @@ import UsersList from './UsersList';
 import Search from '../common/Search'
 import { searchUsers } from '../../actions/searchAction';
 
+/**
+ * @class UsersPage
+ * @extends {React.Component}
+ */
 class UsersPage extends React.Component {
   constructor() {
     super();
     this.handleSearch = this.handleSearch.bind(this);
   }
 
+  /**
+   * @memberof UsersPage
+   * @returns {props} props from redux
+   */
   componentDidMount() {
-    this.props.fetchUsers()
+    this.props.fetchUsers();
   }
 
+
+  /**
+   * @param {any} event
+   * @memberof UsersPage
+   * @returns {object} search from server
+   */
   handleSearch(event) {
     event.preventDefault();
     const query = event.target.value;
@@ -25,6 +39,11 @@ class UsersPage extends React.Component {
     }
   }
 
+
+  /**
+   * @returns {object} object of users
+   * @memberof UsersPage
+   */
   render() {
     const usersSearchResult = this.props.search;
     const renderedUsers = usersSearchResult.length > 0

@@ -2,7 +2,17 @@ import { connect } from 'react-redux';
 import React, { Component } from 'react';
 import { userLoginRequest } from '../../actions/authActions';
 
+
+/**
+ * @class LoginForm
+ * @extends {Component}
+ */
 class LoginForm extends Component {
+  /**
+   * Creates an instance of LoginForm.
+   * @param {any} props
+   * @memberof LoginForm
+   */
   constructor(props) {
     super(props);
     this.state = {
@@ -13,10 +23,20 @@ class LoginForm extends Component {
     this.onSubmit = this.onSubmit.bind(this);
   }
 
+  /**
+   * @param {any} event
+   * @memberof LoginForm
+   * @returns {void}
+   */
   onChange(event) {
     this.setState({ [event.target.name]: event.target.value });
   }
 
+  /**
+   * @param {any} event
+   * @memberof LoginForm
+   * @returns {object} response from server
+   */
   onSubmit(event) {
     event.preventDefault();
     this.props.userLoginRequest(this.state).then((res) => {
@@ -27,6 +47,10 @@ class LoginForm extends Component {
     });
   }
 
+  /**
+   * @returns {html} form
+   * @memberof LoginForm
+   */
   render() {
     return (
       <div>

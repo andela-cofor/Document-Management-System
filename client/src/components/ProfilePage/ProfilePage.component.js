@@ -4,6 +4,10 @@ import ProfilePageForm from './ProfilePageForm.components';
 import getUser from '../../actions/profileAction';
 import { updateUser } from '../../actions/profileAction';
 
+/**
+ * @class ProfilePage
+ * @extends {Component}
+ */
 class ProfilePage extends Component {
   /**
    * renders the Nav component

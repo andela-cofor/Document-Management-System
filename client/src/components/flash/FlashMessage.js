@@ -1,7 +1,17 @@
 import React, { Component } from 'react';
 import classnames from 'classnames';
 
+
+/**
+ * @class FlashMessage
+ * @extends {Component}
+ */
 class FlashMessage extends Component {
+
+  /**
+   * @returns {object} message
+   * @memberof FlashMessage
+   */
   render() {
     const { id, type, text } = this.props.message;
     return (

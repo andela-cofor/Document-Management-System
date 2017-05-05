@@ -3,7 +3,16 @@ import React, { Component } from 'react';
 import DocumentCreateForm from './DocumentCreateForm.component';
 import { saveDocument } from '../../actions/documentActions';
 
+
+/**
+ * @class CreateDocumentPage
+ * @extends {Component}
+ */
 class CreateDocumentPage extends Component {
+  /**
+   * @returns {object} saveDocument
+   * @memberof CreateDocumentPage
+   */
   render() {
     const saveDocument = this.props.saveDocument;
     return (

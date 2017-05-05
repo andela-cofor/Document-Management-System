@@ -4,7 +4,16 @@ import SignupForm from './SignupForm.component';
 import { userSignupRequest } from '../../actions/signupActions';
 import { addFlashMessage } from '../../actions/flashMessages';
 
+
+/**
+ * @class SignupPage
+ * @extends {Component}
+ */
 class SignupPage extends Component {
+  /**
+   * @returns {html} SignupForm
+   * @memberof SignupPage
+   */
   render() {
     const { userSignupRequest, addFlashMessage } = this.props;
     return (

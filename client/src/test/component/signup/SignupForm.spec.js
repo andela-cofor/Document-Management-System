@@ -3,6 +3,10 @@ import React from 'react';
 import { shallow } from 'enzyme';
 import SignupForm from '../../../components/signup/SignupForm.component';
 
+/**
+ * @param {any} saving
+ * @returns {object} test
+ */
 function setup(saving) {
   const props = {
     document: {},

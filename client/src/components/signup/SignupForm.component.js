@@ -1,6 +1,17 @@
 import React, { Component } from 'react';
 
+
+/**
+ * @class SignupForm
+ * @extends {Component}
+ */
 class SignupForm extends Component {
+
+  /**
+   * Creates an instance of SignupForm.
+   * @param {any} props
+   * @memberof SignupForm
+   */
   constructor(props) {
     super(props);
     this.state = {
@@ -14,10 +25,22 @@ class SignupForm extends Component {
     this.onSubmit = this.onSubmit.bind(this);
   }
 
+
+  /**
+   * @param {any} event
+   * @memberof SignupForm
+   * @returns {void}
+   */
   onChange(event) {
     this.setState({ [event.target.name]: event.target.value });
   }
 
+
+  /**
+   * @param {any} event
+   * @memberof SignupForm
+   * @returns {void}
+   */
   onSubmit(event) {
     event.preventDefault();
     this.props.userSignupRequest(this.state).then((res) => {
@@ -28,6 +51,11 @@ class SignupForm extends Component {
     });
   }
 
+
+  /**
+   * @returns {html} form
+   * @memberof SignupForm
+   */
   render() {
     return (
       <div>

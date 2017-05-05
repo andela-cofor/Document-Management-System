@@ -7,16 +7,36 @@ import Search from '../common/Search';
 import { searchDocuments } from '../../actions/searchAction';
 
 
+/**
+ * @class DocumentsPage
+ * @extends {React.Component}
+ */
 class DocumentsPage extends React.Component {
+
+  /**
+   * Creates an instance of DocumentsPage.
+   * @memberof DocumentsPage
+   */
   constructor() {
     super();
     this.handleSearch = this.handleSearch.bind(this);
   }
 
+
+  /**
+   * @memberof DocumentsPage
+   * @returns {void}
+   */
   componentDidMount() {
     this.props.fetchDocument(this.props.uI);
   }
 
+
+  /**
+   * @param {any} event
+   * @memberof DocumentsPage
+   * @returns {void}
+   */
   handleSearch(event) {
     event.preventDefault();
     const query = event.target.value;
@@ -27,6 +47,11 @@ class DocumentsPage extends React.Component {
     }
   }
 
+
+  /**
+   * @returns {object} cards
+   * @memberof DocumentsPage
+   */
   render() {
     const documentSearchResult = this.props.search;
     const renderedDocuments = documentSearchResult.length > 0

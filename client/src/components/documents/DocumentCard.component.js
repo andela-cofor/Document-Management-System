@@ -2,8 +2,19 @@ import React, { Component } from 'react';
 import {Modal, Button, Row, Input, Pagination} from 'react-materialize';
 import { Link } from 'react-router-dom';
 
+
+/**
+ * @class DocumentCard
+ * @extends {Component}
+ */
 class DocumentCard extends Component {
-  constructor (props) {
+
+  /**
+   * Creates an instance of DocumentCard.
+   * @param {any} props
+   * @memberof DocumentCard
+   */
+  constructor(props) {
     super(props);
     const { updateDocument } = this.props;
     const { deleteDocument } = this.props;
@@ -18,10 +29,22 @@ class DocumentCard extends Component {
     };
   }
 
+
+  /**
+   * @param {any} event
+   * @memberof DocumentCard
+   * @returns {void}
+   */
   onChange(event) {
     this.setState({ [event.target.name]: event.target.value });
   }
 
+
+  /**
+   * @param {any} event
+   * @memberof DocumentCard
+   * @returns {object} response from server
+   */
   onSubmit(event) {
     event.preventDefault();
     const id = event.target.id.value;
@@ -36,6 +59,12 @@ class DocumentCard extends Component {
     });
   }
 
+
+  /**
+   * @returns
+   * @memberof DocumentCard
+   * @returns {void} void
+   */
   render() {
     return (
       <div className="col s4">
@@ -56,7 +85,6 @@ class DocumentCard extends Component {
               <span className=""><p><strong>Updated:</strong> { (this.props.document.updatedAt)
                 ? this.props.document.createdAt.split('T')[0] : ''}</p></span>
               <span><p><strong>Document ID:</strong> {this.props.document.id}</p></span>
-              
               <span><strong>Role:</strong> {this.props.document.access}</span>
             </div>
             <p><span><strong>Content:</strong> {this.props.document.content}</span></p>

@@ -6,6 +6,10 @@ import AllDocumentsCard from '../../../components/documents/AllDocumentsCard.com
 
 const store = configureMockStore()({});
 
+/**
+ * @param {any} saving
+ * @returns {object} test
+ */
 function setup(saving) {
   const props = {
     document: {},

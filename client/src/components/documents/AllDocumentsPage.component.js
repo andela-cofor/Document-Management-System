@@ -6,16 +6,38 @@ import { fetchDocuments, deleteDocument, updateDocument, fetchDocument } from '.
 import Search from '../common/Search';
 import { searchDocuments } from '../../actions/searchAction';
 
+
+/**
+ * @class AllDocumentsPage
+ * @extends {React.Component}
+ */
 class AllDocumentsPage extends React.Component {
+
+  /**
+   * Creates an instance of AllDocumentsPage.
+   * @memberof AllDocumentsPage
+   */
   constructor() {
     super();
     this.handleSearch = this.handleSearch.bind(this);
   }
 
+
+  /**
+   * @function componentDidMount
+   * @memberof AllDocumentsPage
+   * @returns {void}
+   */
   componentDidMount() {
     this.props.fetchDocuments();
   }
 
+
+  /**
+   * @param {any} event
+   * @memberof AllDocumentsPage
+   * @returns {void}
+   */
   handleSearch(event) {
     event.preventDefault();
     const query = event.target.value;
@@ -26,6 +48,10 @@ class AllDocumentsPage extends React.Component {
     }
   }
 
+  /**
+   * @returns {object} of cards
+   * @memberof AllDocumentsPage
+   */
   render() {
     const emptyMessage = (
       <p className="qBox1"><strong>There are no documents yet in your collection.</strong></p>
@@ -37,13 +63,11 @@ class AllDocumentsPage extends React.Component {
 
     return (
       <div>
-        <h1></h1>
         <div className="row">
           <div className="col s7 push-s8">
             {this.props.documents.length > 0
             ? <Search onChange={this.handleSearch.bind(this)} />
             : emptyMessage}
-            {/*<UserTour />*/}
           </div>
           <div className="col s5 pull-s7">
           </div>
@@ -64,6 +88,11 @@ AllDocumentsPage.propTypes = {
   searchDocuments: React.PropTypes.func.isRequired
 };
 
+/**
+ * @function
+ * @param {any} state
+ * @returns {void}
+ */
 function mapStateToProps(state) {
   return {
     documents: state.documents,

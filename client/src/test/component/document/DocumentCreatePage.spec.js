@@ -7,6 +7,11 @@ import DocumentCreateForm from '../../../components/documents/DocumentCreateForm
 
 const store = configureMockStore()({});
 
+
+/**
+ * @param {any} saving 
+ *@returns {object} test
+ */
 function setup(saving) {
   const props = {
     document: { title: '', content: '', access: '' },

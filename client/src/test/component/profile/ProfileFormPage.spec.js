@@ -3,6 +3,10 @@ import React from 'react';
 import { mount, shallow } from 'enzyme';
 import ProfilePageForm from '../../../components/ProfilePage/ProfilePageForm.components';
 
+/**
+ * @param {any} saving
+ * @returns {object} test
+ */
 function setup(saving) {
   const props = {
     document: {},

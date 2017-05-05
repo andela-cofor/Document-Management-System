@@ -6,6 +6,10 @@ import LoginForm from '../../../components/login/LoginForm.component';
 
 const store = configureMockStore()({});
 
+/**
+ * @param {any} saving
+ * @returns {object} test
+ */
 function setup(saving) {
   const props = {
     document: {},
