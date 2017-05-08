@@ -12,7 +12,7 @@ export default function AllDocumentsList({ documents }) {
   );
 
   const alldocumentsList = (
-    <div className="">
+    <div className="row">
       {documents.map(document =>
         <AllDocumentsCard
           document={document}

@@ -12,8 +12,11 @@ require('froala-editor/css/froala_editor.pkgd.min.css');
 // Require Font Awesome.
 // require('font-awesome/css/font-awesome.css');
 
+let FroalaEditor = require('react-froala-wysiwyg');
+
 // let FroalaEditor = require('react-froala-wysiwyg');
 let FroalaEditorView = require('react-froala-wysiwyg/FroalaEditorView');
+
 
 /**
  * @class AllDocumentsCard
@@ -69,30 +72,35 @@ class AllDocumentsCard extends Component {
    */
   render() {
     return (
-      <div className="col s4">
-        <div className="card small qBox">
-          <div className="card-image">
-            <img className="activator" src="http://materializecss.com/images/sample-1.jpg" />
-          </div>
+      <div className="col s3">
+        <div className="card qBox">
+          <Modal
+            className="modal"
+            header='View Document'
+            trigger={
+              <i className="material-icons right">remove_red_eye</i>
+              }
+          >
+            <form className="col s12" method="post" onSubmit={(event) => this.onSubmit(event)}>
+              <Row>
+                <div>
+                  <span><strong>Created:</strong> { (this.props.document.createdAt)
+                    ? this.props.document.createdAt.split('T')[0] : ''}</span>
+                  <span className=""><p><strong>Updated:</strong> { (this.props.document.updatedAt)
+                    ? this.props.document.createdAt.split('T')[0] : ''}</p></span>
+                  <span><p><strong>Document ID:</strong> {this.props.document.id}</p></span>
+                  <span><strong>Role:</strong> {this.props.document.access}</span>
+                </div>
+                <p></p>
+                <span><h6><strong>Content</strong></h6></span>
+                <FroalaEditorView
+                  model={this.props.document.content}
+                />
+              </Row>
+            </form>
+          </Modal>
           <div className="card-content white-text">
             <span className="card-title">{this.props.document.title}</span>
-          </div>
-          <div className="card-reveal">
-            <span className="card-title"><strong>Title: </strong>{this.props.document.title}
-              <i className="material-icons right">close</i>
-            </span>
-            <div>
-              <span><strong>Created:</strong> { (this.props.document.createdAt)
-                ? this.props.document.createdAt.split('T')[0] : ''}</span>
-              <span className=""><p><strong>Updated:</strong> { (this.props.document.updatedAt)
-                ? this.props.document.createdAt.split('T')[0] : ''}</p></span>
-              <span><p><strong>Document ID:</strong> {this.props.document.id}</p></span>
-              
-              <span><strong>Role:</strong> {this.props.document.access}</span>
-            </div>
-            <p><span><strong>Content:</strong> {this.props.document.content}</span></p>
-          </div>
-          <div className="card-action">  
           </div>
         </div>
       </div>

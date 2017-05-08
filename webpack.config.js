@@ -4,12 +4,12 @@ const ExtractTextPlugin = require('extract-text-webpack-plugin');
 
 module.exports = {
   entry: [
-    './client/src/index'
+    './client/src/index.jsx'
   ],
   module: {
     loaders: [
       {
-        test: /\.js?$/,
+        test: /\.(js|jsx)$/,
         loader: 'babel',
         exclude: /node_modules/,
         query: {

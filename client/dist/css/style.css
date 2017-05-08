@@ -115,7 +115,7 @@ button:focus {
 }
 
 .icon-color {
-    color: #ff6d00;
+    color: #ffffff;
 }
 
 .doc-form {
@@ -196,3 +196,22 @@ input:focus::-webkit-input-placeholder, input:valid::-webkit-input-placeholder {
 }
 
 .modal { width: 75% !important ; height: 300% !important ; }
+
+.fa {
+    /*color: #3e2723 ;*/
+    display: inline-block;
+    font: normal normal normal 14px/1 FontAwesome;
+    font-style: normal;
+    font-variant-ligatures: normal;
+    font-variant-caps: normal;
+    font-variant-numeric: normal;
+    font-weight: normal;
+    font-stretch: normal;
+    font-size: 20px !important;
+    line-height: 1;
+    font-family: FontAwesome;
+    font-size: inherit;
+    text-rendering: auto;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}

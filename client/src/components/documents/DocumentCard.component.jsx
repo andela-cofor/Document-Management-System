@@ -92,11 +92,33 @@ class DocumentCard extends Component {
    */
   render() {
     return (
-      <div className="col s6">
+      <div className="col s3">
         <div className="card qBox">
-          <div className="card-image">
-            <img className="activator" src="http://materializecss.com/images/sample-1.jpg" />
-          </div>
+          <Modal
+            className="modal"
+            header='View Document'
+            trigger={
+              <i className="material-icons right">remove_red_eye</i>
+              }
+          >
+            <form className="col s12" method="post" onSubmit={(event) => this.onSubmit(event)}>
+              <Row>
+                <div>
+                  <span><strong>Created:</strong> { (this.props.document.createdAt)
+                    ? this.props.document.createdAt.split('T')[0] : ''}</span>
+                  <span className=""><p><strong>Updated:</strong> { (this.props.document.updatedAt)
+                    ? this.props.document.createdAt.split('T')[0] : ''}</p></span>
+                  <span><p><strong>Document ID:</strong> {this.props.document.id}</p></span>
+                  <span><strong>Role:</strong> {this.props.document.access}</span>
+                </div>
+                <p></p>
+                <span><h6><strong>Content</strong></h6></span>
+                <FroalaEditorView
+                  model={this.props.document.content}
+                />
+              </Row>
+            </form>
+          </Modal>
           <div className="card-content white-text">
             <span className="card-title">{this.props.document.title}</span>
           </div>
@@ -116,63 +138,61 @@ class DocumentCard extends Component {
               </strong><FroalaEditorView model={this.props.document.content} />
             </span></p>
           </div>
-          <div className="card-action">
-            {/*<Modal
-              className="modal"
-              header='Edit Document'
-              trigger={
-                <i className="material-icons icon-color edit">mode_edit</i>
-                }
-            >
-              <form className="col s12" method="post" onSubmit={(event) => this.onSubmit(event)}>
-                <Row>
-                  <Input
-                    s={6}
-                    value="DOCUMENT ID"
-                  />
-                  <Input
-                    s={6} name="id"
-                    value={this.props.document.id}
-                  />
-                </Row>
-                <Row>
-                  <Input
-                    name="title"
-                    value={this.state.title === ''
-                    ? this.props.document.title
-                    : this.state.title} onChange={(event) => this.onChange(event)}
-                    id="title"
-                  />
-                  <select
-                    s={6}
-                    type="select"
-                    name="access"
-                    onChange={(event) => this.onChange(event)}
-                    value={this.state.access === '' ? this.props.document.access : this.state.access}
-                  >
-                    <option value="public">Public</option>
-                    <option value="private">Private</option>
-                    <option value="role">Role</option>
-                  </select>
-                </Row>
-                <Row>
-                  <FroalaEditor
-                    validate
-                    tag="textarea"
-                    config={this.config}
-                    model={this.state.content === ''
-                    ? this.props.document.content
-                    : this.state.content}
-                    onModelChange={this.handleModelChange}
-                  />
-                </Row>
-                <Button className="" waves="light" type="submit">UPDATE</Button>
-              </form>
-            </Modal>*/}
-            <a href="#" onClick={() => this.props.deleteDocument(this.props.document.id)}>
-              <i className="material-icons icon-color delete">delete</i>
-            </a>
-          </div>
+          <Modal
+            className="modal"
+            header="Edit Document"
+            trigger={
+              <i className="material-icons icon-color edit">mode_edit</i>
+              }
+          >
+            <form className="col s12" method="post" onSubmit={(event) => this.onSubmit(event)}>
+              <Row>
+                <Input
+                  s={6}
+                  value="DOCUMENT ID"
+                />
+                <Input
+                  s={6} name="id"
+                  value={this.props.document.id}
+                />
+              </Row>
+              <Row>
+                <Input
+                  name="title"
+                  value={this.state.title === ''
+                  ? this.props.document.title
+                  : this.state.title} onChange={(event) => this.onChange(event)}
+                  id="title"
+                />
+                <select
+                  s={6}
+                  type="select"
+                  name="access"
+                  onChange={(event) => this.onChange(event)}
+                  value={this.state.access === '' ? this.props.document.access : this.state.access}
+                >
+                  <option value="public">Public</option>
+                  <option value="private">Private</option>
+                  <option value="role">Role</option>
+                </select>
+              </Row>
+              <Row>
+                <FroalaEditor
+                  validate
+                  tag="textarea"
+                  config={this.config}
+                  model={this.state.content === ''
+                  ? this.props.document.content
+                  : this.state.content}
+                  onModelChange={this.handleModelChange}
+                />
+              </Row>
+              <Button waves="light" type="submit">UPDATE</Button>
+            </form>
+          </Modal>
+          <a href="#" onClick={() => this.props.deleteDocument(this.props.document.id)}>
+            <i className="material-icons icon-color delete">delete</i>
+          </a>
         </div>
       </div>
     );
