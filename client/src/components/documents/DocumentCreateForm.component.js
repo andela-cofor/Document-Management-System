@@ -2,6 +2,17 @@ import React, { Component } from 'react';
 import { Row, Input, Button } from 'react-materialize';
 import { Link } from 'react-router-dom';
 
+// Require Editor JS files.
+require('froala-editor/js/froala_editor.pkgd.min.js');
+
+// Require Editor CSS files.
+require('froala-editor/css/froala_style.min.css');
+require('froala-editor/css/froala_editor.pkgd.min.css');
+
+// Require Font Awesome.
+// require('font-awesome/css/font-awesome.css');
+
+let FroalaEditor = require('react-froala-wysiwyg');
 
 /**
  * @class DocumentCreateForm
@@ -19,12 +30,12 @@ class DocumentCreateForm extends Component {
     this.state = {
       title: '',
       content: '',
-      access: 'public'
+      access: 'public',
     };
     this.onChange = this.onChange.bind(this);
     this.onSubmit = this.onSubmit.bind(this);
+    this.handleModelChange = this.handleModelChange.bind(this);
   }
-
 
   /**
    * @param {any} event
@@ -46,6 +57,15 @@ class DocumentCreateForm extends Component {
     this.props.saveDocument(this.state).then(() => {
       this.context.router.history.push('/app/document');
     });
+  }
+
+  /**
+   * @param {object} content
+   * @memberof DocumentCreateForm
+   * @returns {void}
+   */
+  handleModelChange(content) {
+    this.setState({ content });
   }
 
 
@@ -70,7 +90,7 @@ class DocumentCreateForm extends Component {
                 onChange={this.onChange}
                 className="form-control"
               />
-              <Input
+              {/*<Input
                 placeholder="Content"
                 s={12}
                 validate
@@ -79,9 +99,8 @@ class DocumentCreateForm extends Component {
                 required
                 value={this.state.content}
                 onChange={this.onChange}
-              />
+              />*/}
               <Input
-                s={12}
                 validate
                 type="select"
                 name="access"
@@ -93,8 +112,15 @@ class DocumentCreateForm extends Component {
                 <option className="optionBtn" name="Private"value="private">Private</option>
                 <option className="optionBtn" name="Role" value="role">Role</option>
               </Input>
-              <button className="btn waves-effect waves-light right">Save</button>
             </Row>
+            <FroalaEditor
+              validate
+              tag="textarea"
+              config={this.config}
+              model={this.state.model}
+              onModelChange={this.handleModelChange}
+            />
+            <button className="btn waves-effect waves-light right">Save</button>
           </div>
         </form>
       </div>

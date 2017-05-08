@@ -85,6 +85,7 @@ export function documentDeleted(documentId) {
  * @returns {object} response
  */
 export function saveDocument(data) {
+  console.log(data);
   return (dispatch) => {
     return axios.post('/documents', data)
        .then(response => {

@@ -194,3 +194,5 @@ input:focus::-webkit-input-placeholder, input:valid::-webkit-input-placeholder {
 .profileForm {
   padding: 30px 100px 40px 10px;
 }
+
+.modal { width: 75% !important ; height: 300% !important ; }

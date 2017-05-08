@@ -2,6 +2,20 @@ import React, { Component } from 'react';
 import {Modal, Button, Row, Input, Pagination} from 'react-materialize';
 import { Link } from 'react-router-dom';
 
+// Require Editor JS files.
+require('froala-editor/js/froala_editor.pkgd.min.js');
+
+// Require Editor CSS files.
+require('froala-editor/css/froala_style.min.css');
+require('froala-editor/css/froala_editor.pkgd.min.css');
+
+// Require Font Awesome.
+// require('font-awesome/css/font-awesome.css');
+
+let FroalaEditor = require('react-froala-wysiwyg');
+
+// let FroalaEditor = require('react-froala-wysiwyg');
+let FroalaEditorView = require('react-froala-wysiwyg/FroalaEditorView');
 
 /**
  * @class DocumentCard
@@ -27,6 +41,7 @@ class DocumentCard extends Component {
       ownerId: '',
       ownerRoleId: ''
     };
+    this.handleModelChange = this.handleModelChange.bind(this);
   }
 
 
@@ -39,18 +54,19 @@ class DocumentCard extends Component {
     this.setState({ [event.target.name]: event.target.value });
   }
 
-
   /**
    * @param {any} event
    * @memberof DocumentCard
    * @returns {object} response from server
    */
   onSubmit(event) {
+    this.handleModelChange = this.handleModelChange.bind(this);
     event.preventDefault();
     const id = event.target.id.value;
     const title = event.target.title.value;
     const access = event.target.access.value;
-    const content = event.target.content.value;
+    // const content = event.target.content.value;
+    const content = this.state.content;
     const documentDetails = { id, title, access, content };
     this.props.updateDocument(documentDetails)
     .then((res) => {
@@ -59,6 +75,15 @@ class DocumentCard extends Component {
     });
   }
 
+/**
+   * @param {object} content
+   * @memberof DocumentCreateForm
+   * @returns {void}
+   */
+  handleModelChange(content) {
+    this.setState({ content });
+    // this.setState({ [event.target.name]: event.target.value });
+  }
 
   /**
    * @returns
@@ -67,8 +92,8 @@ class DocumentCard extends Component {
    */
   render() {
     return (
-      <div className="col s4">
-        <div className="card small qBox">
+      <div className="col s6">
+        <div className="card qBox">
           <div className="card-image">
             <img className="activator" src="http://materializecss.com/images/sample-1.jpg" />
           </div>
@@ -87,16 +112,19 @@ class DocumentCard extends Component {
               <span><p><strong>Document ID:</strong> {this.props.document.id}</p></span>
               <span><strong>Role:</strong> {this.props.document.access}</span>
             </div>
-            <p><span><strong>Content:</strong> {this.props.document.content}</span></p>
+            <p><span><strong>Content:
+              </strong><FroalaEditorView model={this.props.document.content} />
+            </span></p>
           </div>
           <div className="card-action">
-            <Modal
+            {/*<Modal
+              className="modal"
               header='Edit Document'
               trigger={
                 <i className="material-icons icon-color edit">mode_edit</i>
                 }
             >
-              <form className="col s12" method="post" onSubmit={(e) => this.onSubmit(e)}>
+              <form className="col s12" method="post" onSubmit={(event) => this.onSubmit(event)}>
                 <Row>
                   <Input
                     s={6}
@@ -109,7 +137,6 @@ class DocumentCard extends Component {
                 </Row>
                 <Row>
                   <Input
-                    s={6}
                     name="title"
                     value={this.state.title === ''
                     ? this.props.document.title
@@ -129,20 +156,19 @@ class DocumentCard extends Component {
                   </select>
                 </Row>
                 <Row>
-                  <textarea
-                    id="content"
-                    name="content"
-                    value={this.state.content === ''
+                  <FroalaEditor
+                    validate
+                    tag="textarea"
+                    config={this.config}
+                    model={this.state.content === ''
                     ? this.props.document.content
                     : this.state.content}
-                    onChange={e => this.onChange(e)}
-                    label="Content"
-                    className="content materialize-textarea"
+                    onModelChange={this.handleModelChange}
                   />
                 </Row>
                 <Button className="" waves="light" type="submit">UPDATE</Button>
               </form>
-            </Modal>
+            </Modal>*/}
             <a href="#" onClick={() => this.props.deleteDocument(this.props.document.id)}>
               <i className="material-icons icon-color delete">delete</i>
             </a>
