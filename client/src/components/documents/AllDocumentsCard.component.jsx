@@ -76,7 +76,7 @@ class AllDocumentsCard extends Component {
         <div className="card qBox">
           <Modal
             className="modal"
-            header='View Document'
+            header={this.props.document.title}
             trigger={
               <i className="material-icons right">remove_red_eye</i>
               }
