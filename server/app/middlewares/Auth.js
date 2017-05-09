@@ -201,6 +201,7 @@ const Auth = {
           message: 'Only positive number is allowed for limit value'
         });
     }
+
     if (offset < 0 || !/^([1-9]\d*|0)$/.test(offset)) {
       return res.status(400)
         .send({
@@ -234,7 +235,7 @@ const Auth = {
       };
     }
     if (`${req.baseUrl}${req.route.path}` === '/users') {
-      query.where = Helper.isAdmin(req.tokenDecode.roleId)
+      query.where = Helper.isAdmin(req.tokenDecode.rolesId)
         ? {}
         : { id: req.tokenDecode.userId };
     }
@@ -245,7 +246,7 @@ const Auth = {
             message: 'Please enter a search query'
           });
       }
-      if (Helper.isAdmin(req.tokenDecode.roleId)) {
+      if (Helper.isAdmin(req.tokenDecode.rolesId)) {
         query.where = Helper.likeSearch(terms);
       } else {
         query.where = {
@@ -254,7 +255,7 @@ const Auth = {
       }
     }
     if (`${req.baseUrl}${req.route.path}` === '/documents') {
-      if (Helper.isAdmin(req.tokenDecode.roleId)) {
+      if (Helper.isAdmin(req.tokenDecode.rolesId)) {
         query.where = {};
       } else {
         query.where = Helper.docAccess(req);
@@ -265,7 +266,7 @@ const Auth = {
       const userSearch = req.query.query
         ? [Helper.docAccess(req), Helper.likeSearch(terms)]
         : Helper.docAccess(req);
-      if (Helper.isAdmin(req.tokenDecode.roleId)) {
+      if (Helper.isAdmin(req.tokenDecode.rolesId)) {
         query.where = adminSearch;
       } else {
         query.where = userSearch;

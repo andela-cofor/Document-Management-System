@@ -86,7 +86,6 @@ class DocumentCard extends Component {
   }
 
   /**
-   * @returns
    * @memberof DocumentCard
    * @returns {void} void
    */

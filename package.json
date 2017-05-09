@@ -9,6 +9,7 @@
     "client:test": "./node_modules/mocha/bin/_mocha --require ignore-styles -w --reporter progress .setup.js client/src/test/**/**/*.spec.js",
     "start": "babel-watch server.js",
     "migrate:test": "NODE_ENV=test sequelize db:migrate",
+    "migrate:dev": "NODE_ENV=development sequelize db:migrate",
     "migrate:prod": "NODE_ENV=production sequelize db:migrate",
     "postinstall": "webpack -p --config ./webpack.config.js --progress",
     "e2e": "node_modules/.bin/nightwatch --config nightwatch.config.js"

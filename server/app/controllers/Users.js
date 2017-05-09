@@ -83,6 +83,7 @@ const User = {
     * @returns {void} no returns
     */
   getAll(req, res) {
+    console.log(req.dmsFilter);
     db.Users
       .findAndCountAll(req.dmsFilter)
       .then((users) => {
@@ -94,6 +95,7 @@ const User = {
           };
           delete users.count;
           const pagination = Helper.pagination(condition);
+          console.log(users.rows);
           res.status(200)
             .send({
               message: 'You have successfully retrived all users',
