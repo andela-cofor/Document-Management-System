@@ -1,10 +1,12 @@
 import { connect } from 'react-redux';
 import React from 'react';
+import { Pagination } from 'react-materialize';
 import { Link } from 'react-router-dom';
 import AllDocumentsList from './AllDocumentsList.component';
 import { fetchDocuments, deleteDocument, updateDocument, fetchDocument } from '../../actions/documentActions';
 import Search from '../common/Search';
 import { searchDocuments } from '../../actions/searchAction';
+import paginateDocumentAction from '../../actions/paginateDocumentAction';
 
 
 /**
@@ -19,6 +21,11 @@ class AllDocumentsPage extends React.Component {
    */
   constructor() {
     super();
+    this.state = {
+      query: '',
+      limit: 8,
+      offset: 0
+    };
     this.handleSearch = this.handleSearch.bind(this);
   }
 
@@ -30,6 +37,7 @@ class AllDocumentsPage extends React.Component {
    */
   componentDidMount() {
     this.props.fetchDocuments();
+    this.props.paginateDocumentAction(this.state.offset, this.state.limit);
   }
 
 
@@ -75,6 +83,14 @@ class AllDocumentsPage extends React.Component {
         <AllDocumentsList
           documents={renderedDocuments}
         />
+        <Pagination
+          className="pag"
+          items={this.props.pageCount}
+          onSelect={(page) => {
+            const offset = (page - 1) * 9;
+            this.props.paginateDocumentAction(offset, this.state.limit);
+          }}
+        />
       </div>
     );
   }
@@ -85,7 +101,8 @@ AllDocumentsPage.propTypes = {
   fetchDocuments: React.PropTypes.func.isRequired,
   // fetchDocument: React.PropTypes.func.isRequired,
   search: React.PropTypes.array.isRequired,
-  searchDocuments: React.PropTypes.func.isRequired
+  searchDocuments: React.PropTypes.func.isRequired,
+  paginateDocumentAction: React.PropTypes.func.isRequired,
 };
 
 /**
@@ -95,9 +112,10 @@ AllDocumentsPage.propTypes = {
  */
 function mapStateToProps(state) {
   return {
-    documents: state.documents,
+    documents: state.pagination.items,
+    pageCount: state.pagination.pageCount,
     search: state.search,
   };
 }
 
-export default connect(mapStateToProps, { fetchDocuments, searchDocuments })(AllDocumentsPage);
+export default connect(mapStateToProps, { fetchDocuments, searchDocuments, paginateDocumentAction })(AllDocumentsPage);

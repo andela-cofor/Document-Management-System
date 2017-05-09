@@ -215,3 +215,8 @@ input:focus::-webkit-input-placeholder, input:valid::-webkit-input-placeholder {
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
 }
+
+.pagination li.active a {
+    color: #fff;
+    background-color: #546e7a !important;
+}
