@@ -48,7 +48,8 @@ export function deleteUser(id) {
   return (dispatch) => {
     return axios.delete(`/users/${id}`)
       .then((res) => {
-        Materialize.toast(res.data.message, 4000, 'rounded');
+        window.location = '/app/users';
+        // Materialize.toast(res.data.message, 10000, 'rounded');
       })
       .then(data => dispatch(userDeleted(id)))
       .catch((err) => {
