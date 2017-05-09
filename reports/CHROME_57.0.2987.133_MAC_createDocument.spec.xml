@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8" ?>
-<testsuites errors="0"
+<testsuites errors="1"
             failures="0"
             tests="1">
 
   <testsuite name="createDocument.spec"
-    errors="0" failures="0" hostname="" id="" package="createDocument.spec" skipped="0"
-    tests="1" time="18.27" timestamp="Wed, 03 May 2017 12:18:26 GMT">
+    errors="1" failures="0" hostname="" id="" package="createDocument.spec" skipped="0"
+    tests="1" time="18.65" timestamp="Tue, 09 May 2017 14:49:49 GMT">
   
-    <testcase name="Create document" classname="createDocument.spec" time="18.27" assertions="6">
+    <testcase name="Create document" classname="createDocument.spec" time="18.65" assertions="6">
 
     
 
@@ -16,7 +16,7 @@
     
 
     
-<system-out>[[ATTACHMENT|/Users/chineduofor/Documents/Work/checkpoint 2/Document-Management-System/screenshots/createDocument.spec/Create-document_ERROR_May-03-2017-131844-GMT+0100.png]]</system-out>
+<system-out>[[ATTACHMENT|/Users/chineduofor/Documents/Work/checkpoint 2/Document-Management-System/screenshots/createDocument.spec/Create-document_ERROR_May-09-2017-155007-GMT+0100.png]][[ATTACHMENT|/Users/chineduofor/Documents/Work/checkpoint 2/Document-Management-System/screenshots/createDocument.spec/Create-document_ERROR_May-09-2017-155007-GMT+0100.png]]</system-out>
     
 
     
