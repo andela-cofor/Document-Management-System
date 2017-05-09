@@ -401,16 +401,8 @@ const Auth = {
   getUserName(req, res, next) {
     db.Users
       .findOne({
-        // where: { [ username: req.query.q ]}
         where: { username: req.query.q },
-      //   where: {
-      //     $or: [
-      //       { username: { $iLike: req.query.q } },
-      //       { firstName: { $iLike: req.query.q } },
-      //       { lastName: { $iLike: req.query.q } }
-      //     ]
-      //   }
-      // })
+      })
       .then((user) => {
         if (!user) {
           return res.status(404)
@@ -421,7 +413,7 @@ const Auth = {
         req.getUser = user;
         next();
       })
-      .catch((err) => { console.log('ERROR', err); res.status(500).send(err.errors); });
+      .catch(err => res.status(500).send(err.errors));
   },
   /**
    * Check for role edit and delete permission
