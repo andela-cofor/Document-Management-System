@@ -141,7 +141,7 @@ class DocumentCard extends Component {
             className="modal"
             header="Edit Document"
             trigger={
-              <i className="material-icons icon-color edit">mode_edit</i>
+              <i id="editLink" className="material-icons icon-color edit">mode_edit</i>
               }
           >
             <form className="col s12" method="post" onSubmit={(event) => this.onSubmit(event)}>
@@ -157,6 +157,7 @@ class DocumentCard extends Component {
               </Row>
               <Row>
                 <Input
+                  id="title"
                   name="title"
                   value={this.state.title === ''
                   ? this.props.document.title
@@ -186,11 +187,11 @@ class DocumentCard extends Component {
                   onModelChange={this.handleModelChange}
                 />
               </Row>
-              <Button waves="light" type="submit">UPDATE</Button>
+              <Button waves="light" type="submit" id="update">UPDATE</Button>
             </form>
           </Modal>
           <a href="#" onClick={() => this.props.deleteDocument(this.props.document.id)}>
-            <i className="material-icons icon-color delete">delete</i>
+            <i className="material-icons icon-color delete" id="delete">delete</i>
           </a>
         </div>
       </div>

@@ -115,6 +115,7 @@ class DocumentCreateForm extends Component {
             </Row>
             <FroalaEditor
               validate
+              name="content"
               tag="textarea"
               config={this.config}
               model={this.state.model}

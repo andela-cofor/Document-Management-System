@@ -1,25 +1,11 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <testsuites errors="0"
             failures="0"
-            tests="2">
+            tests="0">
 
   <testsuite name="login.spec"
     errors="0" failures="0" hostname="" id="" package="login.spec" skipped="0"
-    tests="2" time="13.83" timestamp="Tue, 09 May 2017 14:50:07 GMT">
-  
-    <testcase name="Login Users" classname="login.spec" time="7.453" assertions="2">
-
-    
-
-    
-    </testcase>
-  
-    <testcase name="Invalid user" classname="login.spec" time="6.375" assertions="2">
-
-    
-
-    
-    </testcase>
+    tests="0" time="0.000" timestamp="Wed, 10 May 2017 12:51:44 GMT">
   
   
   </testsuite>
