@@ -8,6 +8,59 @@ const helper = {
     email: faker.internet.email(),
     password: faker.internet.password(),
   },
+  regularUser2: {
+    username: faker.internet.userName(),
+    firstName: faker.name.firstName(),
+    lastName: faker.name.lastName(),
+    email: faker.internet.email(),
+    password: faker.internet.password()
+  },
+  regularUser3: {
+    username: faker.internet.userName(),
+    firstName: faker.name.firstName(),
+    lastName: faker.name.lastName(),
+    email: faker.internet.email(),
+    password: faker.internet.password(),
+  },
+  regularUser4: {
+    username: faker.internet.userName(),
+    firstName: faker.name.firstName(),
+    lastName: faker.name.lastName(),
+    email: faker.internet.email(),
+    password: faker.internet.password(),
+  },
+  regularUser5: {
+    username: faker.internet.userName(),
+    firstName: faker.name.firstName(),
+    lastName: faker.name.lastName(),
+    email: faker.internet.email(),
+    password: faker.internet.password(),
+  },
+
+  regularUser6: {
+    username: faker.internet.userName(),
+    firstName: faker.name.firstName(),
+    lastName: faker.name.lastName(),
+    email: faker.internet.email(),
+    password: faker.internet.password(),
+  },
+  guestRole1: {
+    id: 3,
+    title: 'guest'
+  },
+  guestRole2: {
+    id: 4,
+    title: 'guest111'
+  },
+  guestRole3: {
+    id: 5,
+    title: 'guest2'
+  },
+  sampleRole: {
+    id: 6,
+    title: 'guestSample'
+  },
+>>>>>>> feature/144578851/Test-for-Middleware
   invalidEmailUser: {
     username: faker.internet.userName(),
     firstName: faker.name.firstName(),
@@ -22,10 +75,32 @@ const helper = {
     email: faker.internet.email(),
     password: 'obi',
   },
+
   firstUser: {
     username: faker.internet.userName(),
+<<<<<<< HEAD
     firstname: faker.name.firstName(),
     lastname: faker.name.lastName(),
+=======
+    firstName: faker.name.firstName(),
+    lastName: faker.name.lastName(),
+    email: faker.internet.email(),
+    password: faker.internet.password()
+  },
+
+  firstUser2: {
+    username: faker.internet.userName(),
+    firstName: faker.name.firstName(),
+    lastName: faker.name.lastName(),
+    email: faker.internet.email(),
+    password: faker.internet.password(),
+    rolesId: 1
+  },
+  firstUser1: {
+    username: faker.internet.userName(),
+    firstName: faker.name.firstName(),
+    lastName: faker.name.lastName(),
+>>>>>>> feature/144578851/Test-for-Middleware
     email: faker.internet.email(),
     password: faker.internet.password()
   },
