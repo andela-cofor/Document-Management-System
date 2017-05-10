@@ -24,20 +24,19 @@ class Navbar extends Component {
       <nav>
         {/*<UserTour />*/}
         <div className="nav-wrapper">
-          {/*<a href="/app/document"><div className="brand-logo">Document Management System</div></a>*/}
           {isAuthenticated
             ? <a href="/app/"><div className="brand-logo">
               Document Management System<div className="test"></div></div></a>
             : <a href="/app/login"><div className="brand-logo">Document Management System</div></a>
           }
           <ul id="nav-mobile" className="right hide-on-med-and-down">
-            <li>
+            <li id="allUsers">
               {(this.props.roles === 1)
                 ? <a href="/app/users" className="all-users">All Users</a>
                 : <a href="/app/home" />
               }
             </li>
-            <li>
+            <li id="allDoc">
               <a href="/app/all/document" className="">All Documents</a>
             </li>
             <li className={this.props.isHomeActive}>
@@ -46,15 +45,15 @@ class Navbar extends Component {
                 : <a href="/app/home" />
               }
             </li>
-            <li className={this.props.isLoginActive}>
+            <li id="profileNav" className={this.props.isLoginActive}>
               {isAuthenticated
                 ? <a href="/app/profile" className="profile">Profile</a>
                 : <a href="/app/login" id="login">Login</a>
               }
             </li>
-            <li className={this.props.isSignupActive}>
+            <li id="logout" className={this.props.isSignupActive}>
               {isAuthenticated
-                ? <a href="/app/logout" onClick={this.logout.bind(this)} className="log-out" >Logout</a>
+                ? <a href="/app/logout" onClick={this.logout.bind(this)} className="log-out">Logout</a>
                 : <a href="/app/signup" id="signup">Signup</a>
               }
             </li>

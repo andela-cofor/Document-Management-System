@@ -1,8 +1,7 @@
 import configureMockStore from 'redux-mock-store';
 import expect from 'expect';
 import React from 'react';
-import { mount } from 'enzyme';
-// import DocumentCreateForm from '../../components/documents/DocumentCreateForm.component';
+import { shallow } from 'enzyme';
 import DocumentCreateForm from '../../../components/documents/DocumentCreateForm.component';
 
 const store = configureMockStore()({});
@@ -23,7 +22,7 @@ function setup(saving) {
     deleteDocument: () => {},
   };
 
-  return mount(
+  return shallow(
     <DocumentCreateForm {...props} />,
   );
 }
@@ -44,7 +43,7 @@ describe('DocumentPage Test', () => {
     it('should render self', () => {
       const wrapper = setup();
       expect(wrapper.length).toEqual(1);
-      expect(wrapper.find('Input').length).toEqual(3);
+      expect(wrapper.find('Input').length).toEqual(2);
     });
 
     it('should take props', () => {

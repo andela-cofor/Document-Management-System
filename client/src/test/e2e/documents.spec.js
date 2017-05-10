@@ -24,6 +24,20 @@ module.exports = {
      .click('Button')
      .end();
   },
+  'View document': (browser) => {
+    browser
+     .url(config.url)
+     .click('#login')
+     .setValue('Input[name=email]', 'chinedu.ofor@andela.com')
+     .setValue('Input[name=password]', 'netbeans')
+     .click('button')
+     .pause(5000)
+     .assert.elementPresent('.eye')
+     .click('.eye')
+     .pause(5000)
+     .assert.elementPresent('.modal-content')
+     .end();
+  },
   'Edit document': (browser) => {
     browser
      .url(config.url)

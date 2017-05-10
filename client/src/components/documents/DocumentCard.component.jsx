@@ -97,7 +97,7 @@ class DocumentCard extends Component {
             className="modal"
             header={this.props.document.title}
             trigger={
-              <i className="material-icons right">remove_red_eye</i>
+              <i className="eye material-icons right">remove_red_eye</i>
               }
           >
             <form className="col s12" method="post" onSubmit={(event) => this.onSubmit(event)}>

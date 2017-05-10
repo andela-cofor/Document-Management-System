@@ -21,7 +21,7 @@ class UsersCard extends Component {
           <Modal
             className="modal"
             trigger={
-              <i className="material-icons right">remove_red_eye</i>
+              <i className="eye material-icons right">remove_red_eye</i>
               }
           >
            <div className="card-reveal">
@@ -42,7 +42,7 @@ class UsersCard extends Component {
             <span className="card-title activator">{this.props.users.firstName} {this.props.users.lastName}</span>
           </div>
           <a href="#" onClick={() => this.props.deleteUser(this.props.users.id)}>
-            <i className="material-icons icon-color">delete</i>
+            <i id="delete" className="material-icons icon-color">delete</i>
           </a>
         </div>
       </div>
