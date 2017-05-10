@@ -1,5 +1,5 @@
 .nav-wrapper {
-    background-color: #32558F;
+    background-color: #546e7a;
 }
 
 .brand-logo {
@@ -7,15 +7,15 @@
 }
 
 .btn {
-    background-color: #32558F;
+    background-color: #546e7a;
 }
 
 .search {
-    background-color: #32558F
+    background-color: #546e7a
 }
 
 .drop {
-    color: #32558F;
+    color: #546e7a;
 }
 
 input:not([type]):focus:not([readonly]),
@@ -31,13 +31,13 @@ input[type=tel]:focus:not([readonly]),
 input[type=number]:focus:not([readonly]),
 input[type=search]:focus:not([readonly]),
 textarea.materialize-textarea:focus:not([readonly]) {
-  border-bottom: 1px solid #32558F;
-  box-shadow: 0 1px 0 0 #32558F;
+  border-bottom: 1px solid #546e7a;
+  box-shadow: 0 1px 0 0 #546e7a;
 }
 
 .input-field
 .prefix.active {
-  color: #32558F;
+  color: #546e7a;
 }
 
 input:not([type]):focus:not([readonly]) + label,
@@ -53,11 +53,11 @@ input[type=tel]:focus:not([readonly]) + label,
 input[type=number]:focus:not([readonly]) + label,
 input[type=search]:focus:not([readonly]) + label,
 textarea.materialize-textarea:focus:not([readonly]) + label {
-  color: #32558F;
+  color: #546e7a;
 }
 
 .card {
-  background-color: #32558F;
+  background-color: #546e7a;
   width:304px;
 }
 
@@ -75,7 +75,7 @@ textarea.materialize-textarea:focus:not([readonly]) + label {
 .btn .btn-large {
     text-decoration: none;
     color: #fff;
-    background-color: #32558F;
+    background-color: #546e7a;
     text-align: center;
     letter-spacing: .5px;
     transition: .2s ease-out;
@@ -83,16 +83,16 @@ textarea.materialize-textarea:focus:not([readonly]) + label {
 }
 
 .btn:focus, .btn-large:focus {
-    background-color: #32558F;
+    background-color: #546e7a;
 }
 
 button:focus {
     outline: none;
-    background-color: #32558F;
+    background-color: #546e7a;
 }
 
 .btn:hover, .btn-large:hover {
-    background-color: #32558F;
+    background-color: #546e7a;
 }
 
 .qBox{
@@ -101,7 +101,7 @@ button:focus {
 
 .dropdown-content li>span {
     font-size: 16px;
-    color: #32558F;
+    color: #546e7a;
     display: block;
     line-height: 22px;
     padding: 14px 16px;
@@ -115,7 +115,7 @@ button:focus {
 }
 
 .icon-color {
-    color: #ffffff;
+    color: #ff6d00;
 }
 
 .doc-form {
@@ -126,10 +126,9 @@ button:focus {
 }
 
 .pro-form {
-    padding: 20px 10px 0px 20px;
-    width: 800px;
+    width: 1000px;
     box-shadow: 10px 10px 30px #333;
-    margin: 5% 20%;
+    margin: 5% 12%;
 
 }
 
@@ -160,75 +159,3 @@ button:focus {
 /*s*/
 
 /*background-color: rgb(236, 239, 241);*/
-
-/*.btn-update {*/
-  /*padding: top right bottom left;*/
-  /*padding: 30px 1000px 40px 10px;*/
-/*}*/
-.btn-update {
-  border: none;
-  background: #32558F;
-  cursor: pointer;
-  border-radius: 3px;
-  padding: 6px;
-  width: 100px;
-  color: white;
-  margin: 20% 2%;
-  box-shadow: 0 3px 6px 0 rgba(0, 0, 0, 0.2);
-}
-.btn-update:hover {
-  -webkit-transform: translateY(-3px);
-      -ms-transform: translateY(-3px);
-          transform: translateY(-3px);
-  box-shadow: 0 6px 6px 0 rgba(0, 0, 0, 0.2);
-}
-
-input:focus::-webkit-input-placeholder, input:valid::-webkit-input-placeholder {
-  color: #32558F;
-  font-size: 14px;
-  -webkit-transform: translateY(-20px);
-          transform: translateY(-20px);
-  visibility: visible !important;
-}
-
-.profileForm {
-  padding: 30px 100px 40px 10px;
-}
-
-.modal { width: 75% !important ; height: 300% !important ; }
-
-.fa {
-    /*color: #3e2723 ;*/
-    display: inline-block;
-    font: normal normal normal 14px/1 FontAwesome;
-    font-style: normal;
-    font-variant-ligatures: normal;
-    font-variant-caps: normal;
-    font-variant-numeric: normal;
-    font-weight: normal;
-    font-stretch: normal;
-    font-size: 20px !important;
-    line-height: 1;
-    font-family: FontAwesome;
-    font-size: inherit;
-    text-rendering: auto;
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
-}
-
-.pagination li.active a {
-    color: #fff;
-    background-color: #32558F !important;
-}
-
-.image { 
-   position: relative; 
-   width: 100%; /* for IE 6 */
-}
-
-/*h3 { 
-   position: absolute; 
-   top: 100px; 
-   left: 0; 
-   width: 100%; 
-}*/

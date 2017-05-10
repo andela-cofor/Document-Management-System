@@ -22,7 +22,7 @@ module.exports = {
         type: Sequelize.STRING
       },
       content: {
-        type: Sequelize.TEXT
+        type: Sequelize.STRING
       },
       access: {
         type: Sequelize.STRING
