@@ -1,3 +1,4 @@
+
 import jwt from 'jsonwebtoken';
 import dotenv from 'dotenv';
 import db from '../../app/models/index';
@@ -27,7 +28,7 @@ const Auth = {
    * @param {Object} res response object
    * @param {Object} next Move to next controller handler
    * @returns {void|Object} response object or void
-   */
+   * */
   validateUserInput(req, res, next) {
     if (req.body.rolesId && req.body.rolesId === 1) {
       return res.status(403)
@@ -50,13 +51,13 @@ const Auth = {
     if (!firstName) {
       return res.status(400)
         .send({
-          message: 'Enter a valid firstName'
+          message: 'Enter a valid firstname'
         });
     }
     if (!lastName) {
       return res.status(400)
         .send({
-          message: 'Enter a valid lastName'
+          message: 'Enter a valid lastname'
         });
     }
     if (!email) {
@@ -99,7 +100,7 @@ const Auth = {
             lastName = req.body.lastName;
             email = req.body.email;
             password = req.body.password;
-            const rolesId = req.body.rolesId || 2;
+            const rolesId = req.body.roleId || 2;
             req.userInput =
             { username, firstName, lastName, rolesId, email, password };
             next();
@@ -201,7 +202,6 @@ const Auth = {
           message: 'Only positive number is allowed for limit value'
         });
     }
-
     if (offset < 0 || !/^([1-9]\d*|0)$/.test(offset)) {
       return res.status(400)
         .send({
@@ -218,7 +218,7 @@ const Auth = {
     query.offset = offset;
     query.order = [['createdAt', order]];
 
-    if (`${req.baseUrl}${req.route.path}` === '/search/users') {
+    if (`${req.baseUrl}${req.route.path}` === '/users/search') {
       if (!req.query.query) {
         return res.status(400)
           .send({
@@ -228,18 +228,18 @@ const Auth = {
       query.where = {
         $or: [
           { username: { $iLike: { $any: terms } } },
-          { firstname: { $iLike: { $any: terms } } },
-          { lastname: { $iLike: { $any: terms } } },
+          { firstName: { $iLike: { $any: terms } } },
+          { lastName: { $iLike: { $any: terms } } },
           { email: { $iLike: { $any: terms } } }
         ]
       };
     }
-    if (`${req.baseUrl}${req.route.path}` === '/users') {
+    if (`${req.baseUrl}${req.route.path}` === '/users/') {
       query.where = Helper.isAdmin(req.tokenDecode.rolesId)
         ? {}
         : { id: req.tokenDecode.userId };
     }
-    if (`${req.baseUrl}${req.route.path}` === '/search/documents') {
+    if (`${req.baseUrl}${req.route.path}` === '/documents/search') {
       if (!req.query.query) {
         return res.status(400)
           .send({
@@ -254,7 +254,7 @@ const Auth = {
         };
       }
     }
-    if (`${req.baseUrl}${req.route.path}` === '/documents') {
+    if (`${req.baseUrl}${req.route.path}` === '/documents/') {
       if (Helper.isAdmin(req.tokenDecode.rolesId)) {
         query.where = {};
       } else {
@@ -266,7 +266,7 @@ const Auth = {
       const userSearch = req.query.query
         ? [Helper.docAccess(req), Helper.likeSearch(terms)]
         : Helper.docAccess(req);
-      if (Helper.isAdmin(req.tokenDecode.rolesId)) {
+      if (Helper.isAdmin(req.tokenDecode.roleId)) {
         query.where = adminSearch;
       } else {
         query.where = userSearch;
@@ -460,7 +460,6 @@ const Auth = {
         next();
       });
   },
-  
   /**
    * Validate documents input
    * @param {Object} req req object

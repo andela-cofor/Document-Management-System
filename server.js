@@ -20,6 +20,9 @@ if (process.env.NODE_ENV !== 'test') {
   }));
   app.use(webpackHotMiddleware(compiler));
 }
+app.get('/app/*', (req, res) => {
+  res.sendFile(`${__dirname}/client/dist/index.html`);
+});
 
 app.use(parser.urlencoded({ extended: true }));
 app.use(parser.json());
@@ -27,13 +30,7 @@ app.use('/', route.userRouter);
 app.use('/', route.rolesRouter);
 app.use('/', route.docRoutes);
 app.use('/', route.swagger);
-app.get('/', (req, res) => {
-  res.redirect('/app/');
-});
 app.use(express.static('server/public'));
-app.get('/app/*', (req, res) => {
-  res.sendFile(`${__dirname}/client/dist/index.html`);
-});
 app.use(express.static(path.join(__dirname, 'client/dist')));
 
 app.listen(port, () => {
