@@ -1,5 +1,5 @@
 .nav-wrapper {
-    background-color: #546e7a;
+    background-color: #32558F;
 }
 
 .brand-logo {
@@ -7,15 +7,15 @@
 }
 
 .btn {
-    background-color: #546e7a;
+    background-color: #32558F;
 }
 
 .search {
-    background-color: #546e7a
+    background-color: #32558F
 }
 
 .drop {
-    color: #546e7a;
+    color: #32558F;
 }
 
 input:not([type]):focus:not([readonly]),
@@ -31,13 +31,13 @@ input[type=tel]:focus:not([readonly]),
 input[type=number]:focus:not([readonly]),
 input[type=search]:focus:not([readonly]),
 textarea.materialize-textarea:focus:not([readonly]) {
-  border-bottom: 1px solid #546e7a;
-  box-shadow: 0 1px 0 0 #546e7a;
+  border-bottom: 1px solid #32558F;
+  box-shadow: 0 1px 0 0 #32558F;
 }
 
 .input-field
 .prefix.active {
-  color: #546e7a;
+  color: #32558F;
 }
 
 input:not([type]):focus:not([readonly]) + label,
@@ -53,11 +53,11 @@ input[type=tel]:focus:not([readonly]) + label,
 input[type=number]:focus:not([readonly]) + label,
 input[type=search]:focus:not([readonly]) + label,
 textarea.materialize-textarea:focus:not([readonly]) + label {
-  color: #546e7a;
+  color: #32558F;
 }
 
 .card {
-  background-color: #546e7a;
+  background-color: #32558F;
   width:304px;
 }
 
@@ -75,7 +75,7 @@ textarea.materialize-textarea:focus:not([readonly]) + label {
 .btn .btn-large {
     text-decoration: none;
     color: #fff;
-    background-color: #546e7a;
+    background-color: #32558F;
     text-align: center;
     letter-spacing: .5px;
     transition: .2s ease-out;
@@ -83,16 +83,16 @@ textarea.materialize-textarea:focus:not([readonly]) + label {
 }
 
 .btn:focus, .btn-large:focus {
-    background-color: #546e7a;
+    background-color: #32558F;
 }
 
 button:focus {
     outline: none;
-    background-color: #546e7a;
+    background-color: #32558F;
 }
 
 .btn:hover, .btn-large:hover {
-    background-color: #546e7a;
+    background-color: #32558F;
 }
 
 .qBox{
@@ -101,7 +101,7 @@ button:focus {
 
 .dropdown-content li>span {
     font-size: 16px;
-    color: #546e7a;
+    color: #32558F;
     display: block;
     line-height: 22px;
     padding: 14px 16px;
@@ -167,7 +167,7 @@ button:focus {
 /*}*/
 .btn-update {
   border: none;
-  background: #546e7a;
+  background: #32558F;
   cursor: pointer;
   border-radius: 3px;
   padding: 6px;
@@ -184,7 +184,7 @@ button:focus {
 }
 
 input:focus::-webkit-input-placeholder, input:valid::-webkit-input-placeholder {
-  color: #546e7a;
+  color: #32558F;
   font-size: 14px;
   -webkit-transform: translateY(-20px);
           transform: translateY(-20px);
@@ -218,5 +218,17 @@ input:focus::-webkit-input-placeholder, input:valid::-webkit-input-placeholder {
 
 .pagination li.active a {
     color: #fff;
-    background-color: #546e7a !important;
+    background-color: #32558F !important;
 }
+
+.image { 
+   position: relative; 
+   width: 100%; /* for IE 6 */
+}
+
+/*h3 { 
+   position: absolute; 
+   top: 100px; 
+   left: 0; 
+   width: 100%; 
+}*/

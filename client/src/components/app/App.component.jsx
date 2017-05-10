@@ -9,6 +9,7 @@ import Create from '../documents/DocumentCreatePage.component';
 import ProfilePage from '../ProfilePage/ProfilePage.component';
 import UsersPage from '../users/UsersPage.component';
 import AllDocumentsPage from '../documents/AllDocumentsPage.component';
+import Body from '../body/BodyPage.component';
 
 /**
  * @class App
@@ -32,6 +33,7 @@ class App extends Component {
           <Route path="/app/profile" component={ProfilePage} />
           <Route path="/app/users" component={UsersPage} />
           <Route path="/app/all/document" component={AllDocumentsPage} />
+          {/*<Route path="/app/body" component={Body} />*/}
         </div>
       </BrowserRouter>
     );

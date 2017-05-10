@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import Navbar from '../navigation/Nav.component';
 import FlashMessagesList from '../flash/FlashMessagesList';
+import Body from '../body/BodyPage.component';
 
 
 /**
@@ -17,6 +18,7 @@ class Index extends Component {
       <div>
         <Navbar isHomeActive="" isLoginActive="" isSignupActive="" auth="" />
         <FlashMessagesList />
+        <Body />
       </div>
     );
   }
