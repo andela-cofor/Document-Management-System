@@ -12,7 +12,7 @@ describe('User Model', () => {
     'email',
     'password'
   ];
-  const uniqueFields = ['username', 'email'];
+  // const uniqueFields = ['username', 'email'];
   const emptyFields = ['firstName', 'lastName'];
   const defaultRoleId = 2;
   let regularUser;
@@ -73,6 +73,24 @@ describe('User Model', () => {
         });
     });
   });
+
+  // describe('Unique', () => {
+  //   uniqueFields.forEach((field) => {
+  //     const uniqueTest = Object.assign({}, helper.firstUser);
+  //     uniqueTest[field] = helper.regularUser[field];
+  //     it(`should fails for existing ${field}`, (done) => {
+  //       db.Users.create(uniqueTest)
+  //       .then()
+  //       .catch((error) => {
+  //         console.log(error.errors);
+  //         expect(error.errors[0].message).to.equal(`${field} already exist`);
+  //         expect(error.errors[0].type).to.equal('unique violation');
+  //         expect(error.errors[0].path).to.equal(field);
+  //         done();
+  //       });
+  //     });
+  //   });
+  // });
 
   describe('NOT NULL VOILATIONS', () => {
     requiredFields.forEach((field) => {

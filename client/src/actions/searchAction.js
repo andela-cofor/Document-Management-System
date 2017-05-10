@@ -1,11 +1,6 @@
 import axios from 'axios';
 import { SEARCH_RESULTS } from './types';
 
-/**
- * @export
- * @param {any} documentSearchResult 
- * @returns {void}
- */
 export function documentsSearched(documentSearchResult) {
   return {
     type: SEARCH_RESULTS,
@@ -13,25 +8,15 @@ export function documentsSearched(documentSearchResult) {
   };
 }
 
-/**
- * @export
- * @param {any} queryString 
- * @returns {object} response
- */
 export function searchDocuments(queryString) {
   return (dispatch) => {
-    return axios.get(`/search/documents/?query=${queryString}`)
+    return axios.get(`/search/documents/?q=${queryString}`)
       .then((res) => {
-        dispatch(documentsSearched(res.data.documents.rows));
+        dispatch(documentsSearched([res.data.document]));
       });
   };
 }
 
-/**
- * @export
- * @param {any} queryString
- * @returns {object} response
- */
 export function searchUsers(queryString) {
   return (dispatch) => {
     return axios.get(`/search/users/?q=${queryString}`)
