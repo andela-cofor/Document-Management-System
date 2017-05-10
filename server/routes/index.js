@@ -1,6 +1,6 @@
-import userRouter from '../routes/Users';
-import rolesRouter from '../routes/Roles';
-import docRoutes from '../routes/Documents';
-import swagger from '../routes/Swagger';
+import userRouter from '../routes/users';
+import rolesRouter from '../routes/roles';
+import docRoutes from '../routes/documents';
+import swagger from '../routes/swagger';
 
 export { userRouter, rolesRouter, docRoutes, swagger };
