@@ -58,6 +58,8 @@ describe('ROLE API', () => {
         });
     });
 
+
+
     it('should not allow regular user to create a role', (done) => {
       superRequest.post('/users')
         .send(helper.regularUser4)
