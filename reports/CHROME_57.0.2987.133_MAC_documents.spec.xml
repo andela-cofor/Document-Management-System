@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<testsuites errors="0"
+            failures="0"
+            tests="4">
+
+  <testsuite name="documents.spec"
+    errors="0" failures="0" hostname="" id="" package="documents.spec" skipped="0"
+    tests="4" time="72.13" timestamp="Wed, 10 May 2017 14:39:43 GMT">
+  
+    <testcase name="Create document" classname="documents.spec" time="25.68" assertions="6">
+
+    
+
+    
+
+    
+
+    
+<system-out>[[ATTACHMENT|/Users/chineduofor/Documents/Work/checkpoint 2/Document-Management-System/screenshots/documents.spec/Create-document_ERROR_May-10-2017-154008-GMT+0100.png]][[ATTACHMENT|/Users/chineduofor/Documents/Work/checkpoint 2/Document-Management-System/screenshots/documents.spec/Create-document_ERROR_May-10-2017-154008-GMT+0100.png]]</system-out>
+    
+
+    
+    </testcase>
+  
+    <testcase name="View document" classname="documents.spec" time="15.78" assertions="2">
+<system-out>[[ATTACHMENT|/Users/chineduofor/Documents/Work/checkpoint 2/Document-Management-System/screenshots/documents.spec/View-document_ERROR_May-10-2017-154019-GMT+0100.png]]</system-out>
+    
+
+    
+    </testcase>
+  
+    <testcase name="Edit document" classname="documents.spec" time="20.74" assertions="3">
+<system-out>[[ATTACHMENT|/Users/chineduofor/Documents/Work/checkpoint 2/Document-Management-System/screenshots/documents.spec/Edit-document_ERROR_May-10-2017-154040-GMT+0100.png]]</system-out>
+    
+
+    
+
+    
+    </testcase>
+  
+    <testcase name="Delete document" classname="documents.spec" time="9.935" assertions="2">
+
+    
+
+    
+    </testcase>
+  
+  
+  </testsuite>
+</testsuites>

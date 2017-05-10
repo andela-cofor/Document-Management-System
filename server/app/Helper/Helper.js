@@ -100,10 +100,10 @@ const Helper = {
     const pageSize = condition.limit > condition.count
       ? condition.count : condition.limit;
     return {
-      page_count: next,
+      pageCount: next,
       page: currentPage,
-      page_size: Number(pageSize),
-      total_count: condition.count
+      pageSize: Number(pageSize),
+      totalCount: condition.count
     };
   },
   /**
