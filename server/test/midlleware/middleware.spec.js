@@ -397,30 +397,6 @@ describe('MIDDLEWARE UNIT TEST', () => {
   });
 
   describe('hasDocumentPermission', () => {
-    it('should not continue when user is not the owner of the document', () => {
-      const response = responseEvent();
-      request = httpMocks.createRequest({
-        method: 'PUT',
-        url: '/documents/1',
-        body: {
-          content: 'Andela is the name'
-        },
-        params: {
-          id: 1
-        },
-        tokenDecode: { userId: 2, roleId: 2 }
-      });
-      const middlewareStub = {
-        callback: () => { }
-      };
-      sinon.spy(middlewareStub, 'callback');
-      response.on('end', () => {
-        expect(response._getData().message).to
-          .equal('This document does not exist');
-      });
-      Auth.hasDocumentPermission(request, response, middlewareStub);
-    });
-
     it('should continue when user is the owner of the document', (done) => {
       const response = responseEvent();
       request = httpMocks.createRequest({
