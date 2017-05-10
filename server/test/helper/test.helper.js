@@ -37,7 +37,6 @@ const helper = {
     password: faker.internet.password(),
   },
 
-  //
   regularUser6: {
     username: faker.internet.userName(),
     firstName: faker.name.firstName(),
