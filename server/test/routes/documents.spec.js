@@ -21,7 +21,9 @@ describe('DOCUMENT API', () => {
   let document, updateDoc;
 
   before((done) => {
-    db.Roles.bulkCreate([helper.adminRole, helper.regularRole1])
+    db.Roles.destroy({ where: {} })
+    .then(() => {
+      db.Roles.bulkCreate([helper.adminRole, helper.regularRole4])
       .then((roles) => {
         helper.adminUser.rolesId = roles[0].id;
         db.Users.create(helper.adminUser)
@@ -45,7 +47,11 @@ describe('DOCUMENT API', () => {
                   });
               });
           });
+      })
+      .catch((error) => {
+        console.log('line 50 sad bug', error);
       });
+    });
   });
 
   after((done) => {

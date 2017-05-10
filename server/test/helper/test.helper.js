@@ -121,6 +121,12 @@ const helper = {
     rolesId: 1,
     title: 'admin'
   },
+
+  regularRole4: {
+    id: 2,
+    title: 'regular'
+  },
+
   publicDocument: {
     title: 'bla',
     content: 'blabla',
