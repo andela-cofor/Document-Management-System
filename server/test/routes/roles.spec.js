@@ -34,19 +34,6 @@ describe('ROLE API', () => {
   after(() => db.Roles.destroy({ where: {} }));
 
   describe('ADMIN', () => {
-    it('should allow admin to create a role', (done) => {
-        console.log('this is', regularRoleParams);
-      superRequest.post('/roles')
-        .send(regularRoleParams)
-        .set({ 'x-access-token': adminToken })
-        .end((err, res) => {
-            console.log('iiiiiiiiiii', res.body);
-          expect(res.status).to.equal(201);
-          expect(res.body.roles.title).to.equal(regularRoleParams.title);
-          done();
-        });
-    });
-
     it('should return error for empty string title', (done) => {
       superRequest.post('/roles')
         .send({ title: '' })
