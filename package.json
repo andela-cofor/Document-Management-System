@@ -7,6 +7,7 @@
   "scripts": {
     "test": "NODE_ENV=test istanbul cover _mocha -- -R spec server/test/**/*.spec.js client/src/test/reducers/**/*.spec.js --compilers js:babel-core/register",
     "client:test": "./node_modules/mocha/bin/_mocha --require ignore-styles -w --reporter progress .setup.js client/src/test/**/**/*.spec.js",
+    "comp:test": "./node_modules/mocha/bin/_mocha --require ignore-styles -w --reporter progress .setup.js client/src/test/**/*.spec.js",
     "start": "babel-watch server.js",
     "migrate:test": "NODE_ENV=test sequelize db:migrate",
     "migrate:dev": "NODE_ENV=development sequelize db:migrate",
@@ -62,7 +63,9 @@
     "lodash.isempty": "^4.4.0",
     "materialize-css": "^0.98.2",
     "morgan": "^1.8.1",
+    "moxios": "^0.4.0",
     "nightwatch": "^0.9.14",
+    "nock": "^9.0.13",
     "node-mocks-http": "^1.6.1",
     "node-sass": "^4.5.2",
     "pg": "^6.1.5",
