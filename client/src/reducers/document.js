@@ -1,7 +1,13 @@
 import { SET_DOCUMENTS, ADD_DOCUMENT, DOCUMENT_FETCHED, DOCUMENT_UPDATED, DOCUMENT_DELETED } from '../actions/types';
 
+/**
+ * @export
+ * @param {any} [state=[]]
+ * @param {any} [action={}]
+ * @returns {Array} state
+ */
 export default function documents(state = [], action = {}) {
-  switch(action.type) {
+  switch (action.type) {
     case ADD_DOCUMENT:
       return [
         ...state,

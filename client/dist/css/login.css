@@ -2,7 +2,7 @@
   height: 100px;
   width: 100%;
   font-size: 18px;
-  background: #546e7a;
+  background: #32558F;
   color: white;
   line-height: 150%;
   border-radius: 3px 3px 0 0;
@@ -14,7 +14,8 @@
   width: 30%;
   margin: 100px auto 0;
   box-shadow: 2px 2px 5px 1px rgba(0, 0, 0, 0.2);
-  padding-bottom: 40px;
+  /*padding: top right bottom left;*/
+  padding: 30px 10px 40px 10px;
   border-radius: 3px;
 }
 .loginForm h1 {
@@ -28,15 +29,15 @@ input {
   display: block;
   border: none;
   padding: 10px 0;
-  border-bottom: solid 1px #546e7a;
+  border-bottom: solid 1px #32558F;
   -webkit-transition: all 0.3s cubic-bezier(0.64, 0.09, 0.08, 1);
           transition: all 0.3s cubic-bezier(0.64, 0.09, 0.08, 1);
-  background: -webkit-linear-gradient(top, rgba(255, 255, 255, 0) 96%, #546e7a 4%);
-  background: linear-gradient(to bottom, rgba(255, 255, 255, 0) 96%, #546e7a 4%);
+  background: -webkit-linear-gradient(top, rgba(255, 255, 255, 0) 96%, #32558F 4%);
+  background: linear-gradient(to bottom, rgba(255, 255, 255, 0) 96%, #32558F 4%);
   background-position: -200px 0;
   background-size: 200px 100%;
   background-repeat: no-repeat;
-  color: #546e7a;
+  color: #32558F;
 }
 input:focus, input:valid {
   box-shadow: none;
@@ -44,7 +45,7 @@ input:focus, input:valid {
   background-position: 0 0;
 }
 input:focus::-webkit-input-placeholder, input:valid::-webkit-input-placeholder {
-  color: #546e7a;
+  color: #32558F;
   font-size: 11px;
   -webkit-transform: translateY(-20px);
           transform: translateY(-20px);
@@ -53,7 +54,7 @@ input:focus::-webkit-input-placeholder, input:valid::-webkit-input-placeholder {
 
 .loginButton {
   border: none;
-  background: #546e7a;
+  background: #32558F;
   cursor: pointer;
   border-radius: 3px;
   padding: 6px;
@@ -70,7 +71,7 @@ input:focus::-webkit-input-placeholder, input:valid::-webkit-input-placeholder {
 }
 
 input:focus::-webkit-input-placeholder, input:valid::-webkit-input-placeholder {
-  color: #546e7a;
+  color: #32558F;
   font-size: 14px;
   -webkit-transform: translateY(-20px);
           transform: translateY(-20px);
