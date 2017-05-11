@@ -73,6 +73,7 @@ const helper = {
     email: faker.internet.email(),
     password: 'obi',
   },
+
   firstUser: {
     username: faker.internet.userName(),
     firstName: faker.name.firstName(),
